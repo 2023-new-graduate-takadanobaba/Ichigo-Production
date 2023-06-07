@@ -22,7 +22,7 @@ public class CalendarController {
         model.addAttribute("calendar", calendar);
         model.addAttribute("today", today);
 
-        return "calendar";
+        return "index";
     }
 
     private List<List<CalendarDay>> generateCalendar(YearMonth yearMonth) {
