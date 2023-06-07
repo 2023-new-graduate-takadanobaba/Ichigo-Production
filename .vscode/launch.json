@@ -9,6 +9,16 @@
             "request": "launch",
             "name": "Open index.html",
             "file": "c:\\Users\\yutaro.kai\\Documents\\GitHub\\Ichigo-Production\\苺\\プロ\\demo\\src\\main\\resources\\template\\index.html"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<demo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.demo.DemoApplication",
+            "projectName": "demo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
