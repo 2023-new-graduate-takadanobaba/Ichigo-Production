@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>家計簿アプリ</title>
+    <title>Calendar</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .today {
+            background-color: lightblue;
+        }
+    </style>
 </head>
 <body>
-    <h1>家計簿アプリ</h1>
-    
+    <h1>Calendar</h1>
+    <h2 th:text="${month_name + ' ' + year}"></h2>
     <table>
         <tr>
-            <th>日</th>
-            <th>月</th>
-            <th>火</th>
-            <th>水</th>
-            <th>木</th>
-            <th>金</th>
-            <th>土</th>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
         </tr>
-        <tr th:each="week: ${calendarDays}">
-            <td th:each="day: ${week}">
-                <span th:text="${day.day}"></span>
-                <span th:if="${day.hasTransaction}">(取引あり)</span>
-            </td>
+        <tr th:each="week : ${calendar}">
+            <td th:each="day : ${week}" th:class="${day.isToday() ? 'today' : ''}" th:text="${day.getDay()}"></td>
         </tr>
     </table>
 </body>
