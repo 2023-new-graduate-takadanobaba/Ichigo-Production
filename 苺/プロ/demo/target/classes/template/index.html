@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>家計簿アプリ</title>
+</head>
+<body>
+    <h1>家計簿アプリ</h1>
+    
+    <table>
+        <tr>
+            <th>日</th>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+            <th>土</th>
+        </tr>
+        <tr th:each="week: ${calendarDays}">
+            <td th:each="day: ${week}">
+                <span th:text="${day.day}"></span>
+                <span th:if="${day.hasTransaction}">(取引あり)</span>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
