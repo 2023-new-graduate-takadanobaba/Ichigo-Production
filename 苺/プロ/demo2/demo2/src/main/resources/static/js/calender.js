@@ -3,9 +3,16 @@ const today = new Date();
 // 月末だとずれる可能性があるため、1日固定で取得
 var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
 
-// 初期表示
+// 祝日取得
+var request;
 window.onload = function () {
-    showProcess(today, calendar);
+    request = new XMLHttpRequest();
+    request.open('get', 'syukujitsu.csv', true);
+    request.send(null);
+    request.onload = function () {
+        // 初期表示
+        showProcess(today, calendar);
+    };
 };
 // 前の月表示
 function prev(){
@@ -71,4 +78,42 @@ function createProcess(year, month) {
         calendar += "</tr>";
     }
     return calendar;
+}
+
+// 日付チェック
+function checkDate(year, month, day) {
+    if(isToday(year, month, day)){
+        return {
+            isToday: true,
+            isHoliday: false,
+            holidayName: ""
+        };
+    }
+
+    var checkHoliday = isHoliday(year, month, day);
+    return {
+        isToday: false,
+        isHoliday: checkHoliday[0],
+        holidayName: checkHoliday[1],
+    };
+}
+
+// 当日かどうか
+function isToday(year, month, day) {
+    return (year == today.getFullYear()
+        && month == (today.getMonth())
+        && day == today.getDate());
+    }
+
+// 祝日かどうか
+function isHoliday(year, month, day) {
+    var checkDate = year + '/' + (month + 1) + '/' + day;
+    var dateList = request.responseText.split('\n');
+    // 1行目はヘッダーのため、初期値1で開始
+    for (var i = 1; i < dateList.length; i++) {
+        if (dateList[i].split(',')[0] === checkDate) {
+            return [true, dateList[i].split(',')[1]];
+        }
+    }
+    return [false, ""];
 }
