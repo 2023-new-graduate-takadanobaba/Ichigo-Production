@@ -40,6 +40,13 @@ td:first-child {
 td:last-child {
     color: blue;
 }
+
+/*祝日*/
+td:first-child,
+td.holiday{
+    color: red;
+}
+
 /*前後月の日付*/
 td.disabled {
     color: #ccc;
