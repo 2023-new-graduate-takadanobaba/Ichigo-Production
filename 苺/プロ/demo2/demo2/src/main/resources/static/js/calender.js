@@ -14,6 +14,7 @@ window.onload = function () {
         showProcess(today, calendar);
     };
 };
+
 // 前の月表示
 function prev(){
     showDate.setMonth(showDate.getMonth() - 1);
@@ -29,7 +30,7 @@ function next(){
 // カレンダー表示
 function showProcess(date) {
     var year = date.getFullYear();
-    var month = date.getMonth();
+    var month = date.getMonth(); // 0始まり
     document.querySelector('#header').innerHTML = year + "年 " + (month + 1) + "月";
 
     var calendar = createProcess(year, month);
@@ -66,10 +67,11 @@ function createProcess(year, month) {
             } else {
                 // 当月の日付を曜日に照らし合わせて設定
                 count++;
-                if(year == today.getFullYear()
-                  && month == (today.getMonth())
-                  && count == today.getDate()){
+                var dateInfo = checkDate(year, month, count);
+                if(dateInfo.isToday){
                     calendar += "<td class='today'>" + count + "</td>";
+                } else if(dateInfo.isHoliday) {
+                    calendar += "<td class='holiday' title='" + dateInfo.holidayName + "'>" + count + "</td>";
                 } else {
                     calendar += "<td>" + count + "</td>";
                 }
