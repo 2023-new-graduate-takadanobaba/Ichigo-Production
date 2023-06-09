@@ -1,6 +1,6 @@
 function viewChange(){
-    if(document.getElementById('sample')){
-        id = document.getElementById('sample').value;
+    if(document.getElementById('overall-category')){
+        id = document.getElementById('overall-category').value;
         if(id == 'food'){
             document.getElementById('foodBox').style.display = "";
             document.getElementById('useBox').style.display = "none";
