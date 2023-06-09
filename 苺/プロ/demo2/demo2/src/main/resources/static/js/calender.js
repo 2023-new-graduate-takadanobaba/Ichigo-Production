@@ -18,11 +18,17 @@ var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
 // };
 
 // 前の月表示
+// function キーワードを使用して、prev という名前の関数を定義している
+// function(関数)とは、様々な処理を1つにまとめて、名前をつけることができるもの
+// prev関数とnext関数は、前の月と次の月のカレンダーを表示するためのもの
+// showDateの月を変更し、showProcess関数を呼び出してカレンダーを更新している
+
 function prev(){
     showDate.setMonth(showDate.getMonth() - 1);
     showProcess(showDate);
 }
-
+// カレンダーの表示対象の月を1つ前の月に変更し、
+// その変更後の日付を引数として showProcess 関数を呼び出してカレンダーを表示
 // 次の月表示
 function next(){
     showDate.setMonth(showDate.getMonth() + 1);
