@@ -7,8 +7,8 @@
 <body> 
  <div>ログイン</div> 
  <form method="post" th:action="@{/aaa}"> 
- ユーザ ID:<input type="number" name="userId" /> 
- パスワード:<input type="password" name="password" /> 
+ ユーザ ID:<input type="number" th:field="*{userId}"/> 
+ パスワード:<input type="password"  th:field="*{password}" /> 
  <input type="submit" value="ログイン" /> 
  </form>
 </body> 
