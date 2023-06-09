@@ -8,7 +8,7 @@ const today = new Date();
 //%%    var...は巻き上げに注意
 var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
 
-// 祝日取得
+// 祝日取得                                                                                                                                                                                                                             
 var request;
 window.onload = function () {
     request = new XMLHttpRequest();
@@ -42,7 +42,6 @@ function next(){
 function showProcess(date) {
     var year = date.getFullYear();
     var month = date.getMonth(); // 0始まり
-    //「querySelector()」を使うとid属性値・class属性値などを意識せずにjQuery感覚でHTML要素をセレクタ指定することができます
     document.querySelector('#header').innerHTML = year + "年 " + (month + 1) + "月";
 
     var calendar = createProcess(year, month);
@@ -56,28 +55,15 @@ function showProcess(date) {
 function createProcess(year, month) {
     // 曜日
     var calendar = "<table><tr class='dayOfWeek'>";
-    //forはループ処理
-    //青文字のweekは上のほうに行ったらあるweek
     for (var i = 0; i < week.length; i++) {
         calendar += "<th>" + week[i] + "</th>";
     }
     calendar += "</tr>";
 
-    //getDate()	日付の「日」を取得する（1~31）
-    //getDay()	日付の「曜日」を取得する（0~6）
     var count = 0;
-    //startDayOfWeek 今月初日の曜日
     var startDayOfWeek = new Date(year, month, 1).getDay();
-    //endDate 今月の最終日の日付
     var endDate = new Date(year, month + 1, 0).getDate();
-    //lastMonthEndDate 先月の最終日の日付
     var lastMonthEndDate = new Date(year, month, 0).getDate();
-
-    //row 週の数
-
-    //Mathオブジェクトには数学関係の定数や関数などが格納されています
-    //ceil()関数は引数を切り上げた結果を返す関数です。
-
     var row = Math.ceil((startDayOfWeek + endDate) / week.length);
 
     // 1行ずつ設定
@@ -85,8 +71,6 @@ function createProcess(year, month) {
         calendar += "<tr>";
         // 1colum単位で設定
         for (var j = 0; j < week.length; j++) {
-            //i==0は１週目かつjが今月初日の曜日より小さいとき
-            //処理を繰り返す
             if (i == 0 && j < startDayOfWeek) {
                 // 1行目で1日まで先月の日付を設定
                 calendar += "<td class='disabled'>" + (lastMonthEndDate - startDayOfWeek + j + 1) + "</td>";
@@ -99,11 +83,11 @@ function createProcess(year, month) {
                 count++;
                 var dateInfo = checkDate(year, month, count);
                 if(dateInfo.isToday){
-                    calendar += "<td class='today'><a href=\"form/"+showDate.getFullYear()+"_"+(showDate.getMonth()+1)+"_"+count+"\">" +count+"</a></td>";
+                    calendar += "<td class='today'>" + count + "</td>";
                 } else if(dateInfo.isHoliday) {
                     calendar += "<td class='holiday' title='" + dateInfo.holidayName + "'>" + count + "</td>";
                 } else {
-                    calendar += "<td><a href=\"form/"+showDate.getFullYear()+"_"+(showDate.getMonth()+1)+"_"+count+"\">" + count + "</a></td>";
+                    calendar += "<td>" + count + "</td>";
                 }
             }
         }
