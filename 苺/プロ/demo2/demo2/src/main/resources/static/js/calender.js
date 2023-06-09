@@ -8,17 +8,17 @@ const today = new Date();
 //%%    var...は巻き上げに注意
 var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
 
-// // 祝日取得
-// var request;
-// window.onload = function () {
-//     request = new XMLHttpRequest();
-//     request.open('get', 'syukujitsu.csv', true);
-//     request.send(null);
-//     request.onload = function () {
-//         // 初期表示
-//         showProcess(today, calendar);
-//     };
-// };
+// 祝日取得
+var request;
+window.onload = function () {
+    request = new XMLHttpRequest();
+    request.open('get', 'syukujitsu.csv', true);
+    request.send(null);
+    request.onload = function () {
+        // 初期表示
+        showProcess(today, calendar);
+    };
+};
 
 // 前の月表示
 // function キーワードを使用して、prev という名前の関数を定義している
