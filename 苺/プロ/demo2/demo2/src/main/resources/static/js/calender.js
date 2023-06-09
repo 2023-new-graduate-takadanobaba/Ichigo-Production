@@ -42,6 +42,7 @@ function next(){
 function showProcess(date) {
     var year = date.getFullYear();
     var month = date.getMonth(); // 0始まり
+    //「querySelector()」を使うとid属性値・class属性値などを意識せずにjQuery感覚でHTML要素をセレクタ指定することができます
     document.querySelector('#header').innerHTML = year + "年 " + (month + 1) + "月";
 
     var calendar = createProcess(year, month);
