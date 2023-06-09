@@ -7,7 +7,7 @@
 </head>
 <body>
     <div>購入商品一覧</div>
-    <form method="get" th:action="@{/doRegister}">
+    <form method="post" th:action="@{/doRegister}">
         商品名:<input type="text" name="commodity"/>
         金額:<input type="number" name="price"/>
         <select name="category" id="overall-category" onchange="viewChange();">
