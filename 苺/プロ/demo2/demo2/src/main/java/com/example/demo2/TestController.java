@@ -14,8 +14,4 @@ public class TestController {
         return "test";
     }
 
-    @GetMapping("/")
-    public String calender(){
-        return "calender";
-    }
-}
+  
