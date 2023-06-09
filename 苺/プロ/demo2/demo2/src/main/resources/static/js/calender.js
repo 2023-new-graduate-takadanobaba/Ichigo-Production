@@ -49,6 +49,9 @@ function showProcess(date) {
 }
 
 // カレンダー作成
+// document オブジェクトは、Web ページ上の要素にアクセスするためのグローバルオブジェクトであり、
+// ブラウザによって自動的に提供される
+// 要素を選択する際に document オブジェクトを生成する必要はない
 function createProcess(year, month) {
     // 曜日
     var calendar = "<table><tr class='dayOfWeek'>";
