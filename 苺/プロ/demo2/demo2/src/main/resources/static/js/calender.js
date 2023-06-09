@@ -3,22 +3,22 @@ const week = ["日", "月", "火", "水", "木", "金", "土"];
 //Date constructor...引数が与えられなかった場合、新しく生成された Date オブジェクトはインスタンス化された時点の現在の日付と時刻を表します。
 const today = new Date();
 // 月末だとずれる可能性があるため、1日固定で取得
-//%%    var変数...①変数へ代入される値によって自動的に変数の型を判別してくれる機能
-//%%	varをつけないとグローバル変数になってしまう。付けたらローカル変数になってくれる
-//%%    varは巻き上げに注意
+//%%    var...変数へ代入される値によって自動的に変数の型を判別してくれる機能
+//%%	var...をつけないとグローバル変数になってしまう。付けたらローカル変数になってくれる
+//%%    var...は巻き上げに注意
 var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
 
-// // 祝日取得
-// var request;
-// window.onload = function () {
-//     request = new XMLHttpRequest();
-//     request.open('get', 'syukujitsu.csv', true);
-//     request.send(null);
-//     request.onload = function () {
-//         // 初期表示
-//         showProcess(today, calendar);
-//     };
-// };
+// 祝日取得
+var request;
+window.onload = function () {
+    request = new XMLHttpRequest();
+    request.open('get', 'syukujitsu.csv', true);
+    request.send(null);
+    request.onload = function () {
+        // 初期表示
+        showProcess(today, calendar);
+    };
+};
 
 // 前の月表示
 // function キーワードを使用して、prev という名前の関数を定義している
