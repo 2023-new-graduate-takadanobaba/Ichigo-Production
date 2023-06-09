@@ -3,6 +3,8 @@ package com.example.demo2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class CalenderController{
     /**
@@ -15,6 +17,12 @@ public class CalenderController{
 
     @RequestMapping(path="/ichigo",method=RequestMethod.GET)
     public String ichigo(){
+        return"calender";
+    }
+
+    @RequestMapping(path="/doRegister",method=RequestMethod.POST)
+    public String doRegister(RegisterForm form,HttpSession session){
+        //CRUDで登録する記述をする
         return"calender";
     }
 
