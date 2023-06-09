@@ -27,7 +27,7 @@ public class CalenderController{
     @RequestMapping(path="/doRegister",method=RequestMethod.POST)
     public String doRegister(RegisterForm form,HttpSession session){
         //CRUDで登録する記述をする
-        return"/ichigo";
+        return"calender";
     }
 
 
