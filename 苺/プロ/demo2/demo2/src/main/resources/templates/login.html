@@ -6,7 +6,7 @@
 </head>
 <body> 
  <div>ログイン</div> 
- <form method="post" th:action="@{/aaa}"> 
+ <form method="post" th:action="@{/doLogin}"> 
  ユーザ ID:<input type="number" th:field="*{userId}"/> 
  パスワード:<input type="password"  th:field="*{password}" /> 
  <input type="submit" value="ログイン" /> 
