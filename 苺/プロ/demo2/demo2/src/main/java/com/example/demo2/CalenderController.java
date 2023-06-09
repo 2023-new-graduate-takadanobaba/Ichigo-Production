@@ -13,7 +13,10 @@ public class CalenderController{
             return"form";
     }
 
-
+    @RequestMapping(path="/ichigo",method=RequestMethod.GET)
+    public String ichigo(){
+        return"calender";
+    }
 
 
 
