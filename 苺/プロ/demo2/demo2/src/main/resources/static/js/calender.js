@@ -56,6 +56,8 @@ function showProcess(date) {
 function createProcess(year, month) {
     // 曜日
     var calendar = "<table><tr class='dayOfWeek'>";
+    //forはループ処理
+    //青文字のweekは上のほうに行ったらあるweek
     for (var i = 0; i < week.length; i++) {
         calendar += "<th>" + week[i] + "</th>";
     }
