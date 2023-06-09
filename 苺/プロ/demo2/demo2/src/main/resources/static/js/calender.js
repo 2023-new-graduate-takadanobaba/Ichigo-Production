@@ -67,6 +67,8 @@ function createProcess(year, month) {
     var startDayOfWeek = new Date(year, month, 1).getDay();
     var endDate = new Date(year, month + 1, 0).getDate();
     var lastMonthEndDate = new Date(year, month, 0).getDate();
+    //Mathオブジェクトには数学関係の定数や関数などが格納されています
+    //ceil()関数は引数を切り上げた結果を返す関数です。
     var row = Math.ceil((startDayOfWeek + endDate) / week.length);
 
     // 1行ずつ設定
