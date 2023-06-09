@@ -80,10 +80,6 @@ function createProcess(year, month) {
 
     var row = Math.ceil((startDayOfWeek + endDate) / week.length);
 
-    //URL指定するためにyearとmonthを定義
-    var year = today.getFullYear();
-    var month = today.getMonth();
-
     // 1行ずつ設定
     for (var i = 0; i < row; i++) {
         calendar += "<tr>";
@@ -103,11 +99,11 @@ function createProcess(year, month) {
                 count++;
                 var dateInfo = checkDate(year, month, count);
                 if(dateInfo.isToday){
-                    calendar += "<td class='today'><a href=\"form/"+year+"_"+month+"_"+count+"\">" +count+"</a></td>";
+                    calendar += "<td class='today'><a href=\"form/"+showDate.getFullYear()+"_"+(showDate.getMonth()+1)+"_"+count+"\">" +count+"</a></td>";
                 } else if(dateInfo.isHoliday) {
                     calendar += "<td class='holiday' title='" + dateInfo.holidayName + "'>" + count + "</td>";
                 } else {
-                    calendar += "<td><a href=\"form/"+year+"_"+month+"_"+count+"\">" + count + "</a></td>";
+                    calendar += "<td><a href=\"form/"+showDate.getFullYear()+"_"+(showDate.getMonth()+1)+"_"+count+"\">" + count + "</a></td>";
                 }
             }
         }
