@@ -11,21 +11,23 @@ public class CalenderController{
      * @return
      */
 
-     
+     //formを表示する
     @RequestMapping(path="/form/{date}",method=RequestMethod.GET)
     public String Form(){
             return"form";
     }
 
+    //カレンダーを表示する
     @RequestMapping(path="/ichigo",method=RequestMethod.GET)
     public String ichigo(){
         return"calender";
     }
 
+    //formの完了押したときに動く機能
     @RequestMapping(path="/doRegister",method=RequestMethod.POST)
     public String doRegister(RegisterForm form,HttpSession session){
         //CRUDで登録する記述をする
-        return"calender";
+        return"/ichigo";
     }
 
 
