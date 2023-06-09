@@ -10,7 +10,7 @@
     <form method="get" th:action="@{/form}">
         商品名:<input type="text" name="commodity"/>
         金額:<input type="number" name="price"/>
-        <select name="category" id="overall-category">
+        <select name="category" id="overall-category" onchange="viewChange();">
             <option value="">--カテゴリーを選択してください。--</option>
             <option value="food">食料</option>
             <option value="dailyuse">日用品</option>
@@ -19,27 +19,21 @@
             <option value="hobby">趣味</option>
             <option value="other">その他</option>
         </select>
+        <div id="foodBox">
+            <select>
+                <option value="meat">肉</option>
+                <option value="fish">魚</option>
+            </select>
+        </div>
+        <div id="useBox" style="display:none;">
+            <select>
+                <option value="sa">薬</option>
+            </select>
+        </div>
+        <div id="travelBox" style="display:none;">
+            <p>交通費</p>
+        </div>
     </form>
-
-    <select id="sample" onchange="viewChange();">
-        <option value="food">食料</option>
-        <option value="dailyuse">日用品</option>
-        <option value="travelcost">交通費</option>
-    </select>
-    <div id="foodBox">
-        <select>
-            <option value="meat">肉</option>
-            <option value="fish">魚</option>
-        </select>
-    </div>
-    <div id="useBox" style="display:none;">
-        <select>
-            <option value="sa">薬</option>
-        </select>
-    </div>
-    <div id="travelBox" style="display:none;">
-        <p>交通費</p>
-    </div>
 
 </body>
 </html>  
