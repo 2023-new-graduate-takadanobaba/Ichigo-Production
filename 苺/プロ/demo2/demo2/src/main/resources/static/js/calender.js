@@ -85,6 +85,8 @@ function createProcess(year, month) {
         calendar += "<tr>";
         // 1colum単位で設定
         for (var j = 0; j < week.length; j++) {
+            //i==0は１週目かつjが今月初日の曜日より小さいとき
+            //処理を繰り返す
             if (i == 0 && j < startDayOfWeek) {
                 // 1行目で1日まで先月の日付を設定
                 calendar += "<td class='disabled'>" + (lastMonthEndDate - startDayOfWeek + j + 1) + "</td>";
