@@ -60,10 +60,16 @@ function createProcess(year, month) {
     }
     calendar += "</tr>";
 
+    //getDate()	日付の「日」を取得する（1~31）
+    //getDay()	日付の「曜日」を取得する（0~6）
     var count = 0;
+    //startDayOfWeek 今月初日の曜日
     var startDayOfWeek = new Date(year, month, 1).getDay();
+    //endDate 今月の最終日の日付
     var endDate = new Date(year, month + 1, 0).getDate();
+    //lastMonthEndDate 先月の最終日の日付
     var lastMonthEndDate = new Date(year, month, 0).getDate();
+    //row 週の数
     var row = Math.ceil((startDayOfWeek + endDate) / week.length);
 
     // 1行ずつ設定
