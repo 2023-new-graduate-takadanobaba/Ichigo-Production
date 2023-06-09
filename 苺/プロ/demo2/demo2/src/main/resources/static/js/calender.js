@@ -42,6 +42,7 @@ function next(){
 function showProcess(date) {
     var year = date.getFullYear();
     var month = date.getMonth(); // 0始まり
+    //「querySelector()」を使うとid属性値・class属性値などを意識せずにjQuery感覚でHTML要素をセレクタ指定することができます
     document.querySelector('#header').innerHTML = year + "年 " + (month + 1) + "月";
 
     var calendar = createProcess(year, month);
@@ -55,6 +56,8 @@ function showProcess(date) {
 function createProcess(year, month) {
     // 曜日
     var calendar = "<table><tr class='dayOfWeek'>";
+    //forはループ処理
+    //青文字のweekは上のほうに行ったらあるweek
     for (var i = 0; i < week.length; i++) {
         calendar += "<th>" + week[i] + "</th>";
     }
@@ -69,7 +72,12 @@ function createProcess(year, month) {
     var endDate = new Date(year, month + 1, 0).getDate();
     //lastMonthEndDate 先月の最終日の日付
     var lastMonthEndDate = new Date(year, month, 0).getDate();
+
     //row 週の数
+
+    //Mathオブジェクトには数学関係の定数や関数などが格納されています
+    //ceil()関数は引数を切り上げた結果を返す関数です。
+
     var row = Math.ceil((startDayOfWeek + endDate) / week.length);
 
     // 1行ずつ設定
