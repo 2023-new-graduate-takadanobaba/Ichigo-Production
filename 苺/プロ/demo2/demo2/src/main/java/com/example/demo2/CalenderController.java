@@ -8,12 +8,15 @@ public class CalenderController{
     /**
      * @return
      */
-    @RequestMapping(path="/form",method=RequestMethod.GET)
+    @RequestMapping(path="/form/{date}",method=RequestMethod.GET)
     public String Form(){
             return"form";
     }
 
-
+    @RequestMapping(path="/ichigo",method=RequestMethod.GET)
+    public String ichigo(){
+        return"calender";
+    }
 
 
 
