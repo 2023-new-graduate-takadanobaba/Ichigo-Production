@@ -2,6 +2,25 @@
 <html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <script>
+        function addCheckbox() {
+          var container = document.getElementById("checkboxContainer");
+          var newCheckbox = document.createElement("input");
+          newCheckbox.type = "checkbox";
+          container.appendChild(newCheckbox);
+
+          var newText = document.createElement("input");
+          newText.type = "text";
+          container.appendChild(newText);
+
+          var newNumber = document.createElement("input");
+          newNumber.type = "number";
+          container.appendChild(newNumber);
+
+          var lineBreak = document.createElement("br");
+          container.appendChild(lineBreak);
+        }
+      </script>
 </head>
 <body>
     <div>リスト</div>
@@ -12,5 +31,11 @@
         <input id="text" type="text" name="name" value="" placeholder="商品名">
         <input id="text" type="number" name="price" value="" placeholder="金額">円
     </form>
+
+    <div id="checkboxContainer">
+        <!-- <input type="checkbox"> -->
+      </div>
+      <button onclick="addCheckbox()">+</button>
+    </body>
 </body>
 </html>
