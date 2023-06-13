@@ -44,9 +44,10 @@
 </body>
 </html> --> 
 
-<html>
+
+<html xmlns:th="http://thymeleaf.org">
 <head>
-<script src="list.js" defer></script>
+<script th:src="@{/js/list.js}" defer></script>
 </head>
 <body onload="reCalc();">
 <table>
@@ -60,39 +61,15 @@
     </thead>
     <tbody>
         <tr>
-            <th>リンゴ</th>
+            <th> <input id="text" type="text" name="name" value="" placeholder="商品名"></th>
             <td>
-                <input type="number" id="tanka_001" name="tanka_001" readonly value="100">円
+                <input type="number" id="tanka_001" name="tanka_001">円
             </td>
             <td>
-                <input type="number" id="suryo_001" name="suryo_001" value="3" onchange="reCalc();">個
+                <input type="number" id="suryo_001" name="suryo_001" value="1" onchange="reCalc();">個
             </td>
             <td>
-                <input type="number" id="yokokei_001" name="yokokei_001" readonly value="0">円
-            </td>
-        </tr>
-        <tr>
-            <th>バナナ</th>
-            <td>
-                <input type="number" id="tanka_002" name="tanka_002" readonly value="200">円
-            </td>
-            <td>
-                <input type="number" id="suryo_002" name="suryo_002" value="2" onchange="reCalc();">個
-            </td>
-            <td>
-                <input type="number" id="yokokei_002" name="yokokei_002" readonly value="0">円
-            </td>
-        </tr>
-        <tr>
-            <th>パイナップル</th>
-            <td>
-                <input type="number" id="tanka_003" name="tanka_003" readonly value="300">円
-            </td>
-            <td>
-                <input type="number" id="suryo_003" name="suryo_003" value="1" onchange="reCalc();">個
-            </td>
-            <td>
-                <input type="number" id="yokokei_003" name="yokokei_003" readonly value="0">円
+                <input type="number" id="yokokei_001" name="yokokei_001">円
             </td>
         </tr>
     </tbody>
