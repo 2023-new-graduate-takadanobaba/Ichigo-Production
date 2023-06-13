@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <script>
         function addCheckbox() {
+          //.getElementById:htmlの要素を変数conteainerに格納
           var container = document.getElementById("checkboxContainer");
+          //.createElement:<input>を変数newCheckboxに格納
           var newCheckbox = document.createElement("input");
+          //格納された<input>のtypeを指定
           newCheckbox.type = "checkbox";
+          //取得したhtmlの要素に出力
           container.appendChild(newCheckbox);
 
           var newText = document.createElement("input");
