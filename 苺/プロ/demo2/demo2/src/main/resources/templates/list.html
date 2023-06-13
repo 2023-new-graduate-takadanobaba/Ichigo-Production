@@ -5,27 +5,12 @@
 </head>
 <body>
     <div>リスト</div>
-    <form method="post" th:action="@{/}">
-        <input type="checkbox"  id="checkbox1" name="option1" value="value1">
-        <label for="checkbox1">商品名</label>
-    </form>
-
-
-
     <form>
         <label>
-            <input type="checkbox" name="framework[]" value="Angular">Angular
+            <input id="goods" type="checkbox" name="framework[]">
         </label>
-        <label>
-            <input type="checkbox" name="framework[]" value="React.js">React.js
-        </label>
-        <label>
-            <input type="checkbox" name="framework[]" value="Vue.js">Vue.js
-        </label>
-        <label>
-            <input id="other" type="checkbox" name="framework[]" value="その他">その他
-        </label>
-        <input id="text" type="text" name="other" value="" placeholder="その他入力欄">
+        <input id="text" type="text" name="name" value="" placeholder="商品名">
+        <input id="text" type="number" name="price" value="" placeholder="金額">円
     </form>
 </body>
 </html>
