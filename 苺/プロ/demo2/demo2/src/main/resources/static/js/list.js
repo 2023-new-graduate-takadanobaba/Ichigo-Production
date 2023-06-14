@@ -40,3 +40,10 @@ function reCalc()
     document.getElementById("total").value = tatekei();
     return;
 }
+
+//追加機能
+function addForm()
+{
+    var form = "テスト";
+    document.querySelectorAll("#formContainer").innerHTML = form;
+}
