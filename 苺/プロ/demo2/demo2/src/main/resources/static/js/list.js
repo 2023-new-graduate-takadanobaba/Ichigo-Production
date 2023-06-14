@@ -42,8 +42,61 @@ function reCalc()
 }
 
 //追加機能
-function addForm()
-{
-    var form = "<p>テスト</p>";
-    document.querySelector("#formContainer").innerHTML = form;
-}
+// function addForm()
+// {
+//     var form = "<p></p>";
+//     document.querySelector("#formContainer").innerHTML = form;
+// }
+
+function addForm() {
+    var formContainer = document.getElementById("formContainer");
+  
+    // 追加するフォームの数
+    var numFormsToAdd = 1;
+  
+    for (var i = 0; i < numFormsToAdd; i++) {
+      // 新しい行（tr要素）を作成
+      var newRow = document.createElement("tr");
+  
+      // 商品名列を追加
+      var nameCell = document.createElement("th");
+      var nameInput = document.createElement("input");
+      nameInput.type = "text";
+      nameInput.name = "name";
+      nameInput.placeholder = "商品名";
+      nameCell.appendChild(nameInput);
+      newRow.appendChild(nameCell);
+  
+      // 単価列を追加
+      var priceCell = document.createElement("td");
+      var priceInput = document.createElement("input");
+      priceInput.type = "number";
+      priceInput.name = "tanka";
+      priceInput.onchange = reCalc;
+      priceCell.appendChild(priceInput);
+      priceCell.appendChild(document.createTextNode("円"));
+      newRow.appendChild(priceCell);
+  
+      // 数量列を追加
+      var quantityCell = document.createElement("td");
+      var quantityInput = document.createElement("input");
+      quantityInput.type = "number";
+      quantityInput.name = "suryo";
+      quantityInput.value = "1";
+      quantityInput.onchange = reCalc;
+      quantityCell.appendChild(quantityInput);
+      quantityCell.appendChild(document.createTextNode("個"));
+      newRow.appendChild(quantityCell);
+  
+      // 合計列を追加
+      var totalCell = document.createElement("td");
+      var totalInput = document.createElement("input");
+      totalInput.type = "number";
+      totalInput.name = "yokokei";
+      totalCell.appendChild(totalInput);
+      totalCell.appendChild(document.createTextNode("円"));
+      newRow.appendChild(totalCell);
+  
+      // 新しい行をフォームコンテナに追加
+      formContainer.appendChild(newRow);
+    }}
