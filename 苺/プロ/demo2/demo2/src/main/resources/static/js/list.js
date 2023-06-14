@@ -72,6 +72,7 @@ function addForm() {
       var priceInput = document.createElement("input");
       priceInput.type = "number";
       priceInput.name = "tanka";
+      nameInput.id = "tanka";
       priceInput.onchange = reCalc;
       priceCell.appendChild(priceInput);
       priceCell.appendChild(document.createTextNode("円"));
@@ -83,6 +84,7 @@ function addForm() {
       quantityInput.type = "number";
       quantityInput.name = "suryo";
       quantityInput.value = "1";
+      quantityInput.id="suryo";
       quantityInput.onchange = reCalc;
       quantityCell.appendChild(quantityInput);
       quantityCell.appendChild(document.createTextNode("個"));
@@ -93,6 +95,7 @@ function addForm() {
       var totalInput = document.createElement("input");
       totalInput.type = "number";
       totalInput.name = "yokokei";
+      totalInput.id="yokokei";
       totalCell.appendChild(totalInput);
       totalCell.appendChild(document.createTextNode("円"));
       newRow.appendChild(totalCell);
