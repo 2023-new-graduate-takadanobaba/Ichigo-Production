@@ -44,6 +44,6 @@ function reCalc()
 //追加機能
 function addForm()
 {
-    var form = "テスト";
+    var form = "<p>テスト</p>";
     document.querySelectorAll("#formContainer").innerHTML = form;
 }
