@@ -8,5 +8,19 @@
 </head>
 <body>
     test
+    <table>
+        <tr>
+            <th>id</th>
+            <th>名前</th>
+            <th>値段</th>
+            <th>数</th>
+        </tr>
+        <tr th:each="item:${items}">
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.goodsname}"></td>
+            <td th:text="${item.price}"></td>
+            <td th:text="${item.amount}"></td>
+        </tr>
+    </table>
 </body>
 </html>
