@@ -65,7 +65,7 @@ function addForm() {
       checkInput.name = "check";
       checkInput.id = "check_"+(i + 2);
       checkCell.appendChild(checkInput);
-      newRow.appendChild(checkCell);
+      newRow.appendChild(checkCell);あああああ
 
   
       // 商品名列を追加
