@@ -57,6 +57,10 @@ function addForm() {
     for (var i = 0; i < numFormsToAdd; i++) {
       // 新しい行（tr要素）を作成
       var newRow = document.createElement("tr");
+
+      //checkbox列を追加
+      var checkCell=document.createElement("th");
+      var 
   
       // 商品名列を追加
       var nameCell = document.createElement("th");
