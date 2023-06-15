@@ -130,4 +130,13 @@ function addForm() {
       // 新しい行をフォームコンテナに追加
       formContainer.appendChild(newRow);
     }
+    // 削除ボタンをクリックした時の処理
+function deleteForm(buttonId) {
+    // ボタンのIDから行を特定
+    var row = document.getElementById(buttonId).parentNode.parentNode;
+    // 行を削除
+    row.parentNode.removeChild(row);
+    // 再計算
+    reCalc();
+  }
   }
