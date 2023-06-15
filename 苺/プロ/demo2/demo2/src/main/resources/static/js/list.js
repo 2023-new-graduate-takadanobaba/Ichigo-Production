@@ -52,11 +52,24 @@ function addForm() {
     var formContainer = document.getElementById("formContainer");
   
     // 追加するフォームの数
+    var numcheck =1;
     var numFormsToAdd = 1;
   
     for (var i = 0; i < numFormsToAdd; i++) {
       // 新しい行（tr要素）を作成
       var newRow = document.createElement("tr");
+
+
+      //checkbox列を追加
+      var checkCell = document.createElement("th");
+      var checkInput = document.createElement("input");
+      checkInput.type = "checkbox";
+      checkInput.name = "check";
+      checkInput.id = "check_"+(i + 2);
+      checkCell.appendChild(checkInput);
+      newRow.appendChild(checkCell);
+
+
   
       // 商品名列を追加
       var nameCell = document.createElement("th");
