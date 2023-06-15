@@ -72,13 +72,12 @@ function addForm() {
 
   
       // 商品名列を追加
-      var nameCell = document.createElement("th");
+     
       var nameInput = document.createElement("input");
       nameInput.type = "text";
       nameInput.name = "name";
       nameInput.placeholder = "商品名";
-      nameCell.appendChild(nameInput);
-      newRow.appendChild(nameCell);
+      checkCell.appendChild(nameInput);
   
       // 単価列を追加
       var priceCell = document.createElement("td");
