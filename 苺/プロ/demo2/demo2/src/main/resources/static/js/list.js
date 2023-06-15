@@ -115,11 +115,16 @@ function addForm() {
       newRow.appendChild(totalCell);
 
       //削除列を追加
-      var delateCell = document.createElement("td");
-      var delateButton = document.createElement("button")
-      delateButton.id="button_"+(i+2);
-      delateCell.appendChild(delateButton);
-      newRow.appendChild(delateCell);
+      var deleteCell = document.createElement("td");
+      var deleteButton = document.createElement("button");
+      deleteButton.id = "button_" + (i + 2);
+      deleteButton.textContent = "削除";
+      deleteButton.onclick = function() {
+        deleteForm(this.id);
+      };
+      deleteCell.appendChild(deleteButton);
+      newRow.appendChild(deleteCell);
+  
 
   
       // 新しい行をフォームコンテナに追加
