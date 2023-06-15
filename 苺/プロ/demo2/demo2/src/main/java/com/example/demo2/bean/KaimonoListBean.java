@@ -1,8 +1,12 @@
-package com.example.demo2.form;
+package com.example.demo2.bean;
 
 
-public class RegisterForm {
-    
+public class KaimonoListBean {
+
+     
+	private Integer id;
+
+
 	private String goodsname;
 
 	
@@ -11,20 +15,19 @@ public class RegisterForm {
     
     private Integer amount;
 
-    private Integer id;
 
-    public String getGoodsname() {
-        return goodsname;
-    }
-
-
-    public Integer getId() {
+	public Integer getId() {
         return id;
     }
 
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+
+    public String getGoodsname() {
+        return goodsname;
     }
 
 
@@ -52,4 +55,10 @@ public class RegisterForm {
         this.amount = amount;
     }
 
+
+    
+
+
+        
 }
+    
