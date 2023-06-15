@@ -11,9 +11,20 @@ public class RegisterForm {
     
     private Integer amount;
 
+    private Integer id;
 
     public String getGoodsname() {
         return goodsname;
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
 
