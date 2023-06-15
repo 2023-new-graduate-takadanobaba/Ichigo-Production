@@ -137,6 +137,7 @@ function deleteForm(buttonId) {
     var row = document.getElementById(buttonId).parentNode.parentNode;
     // 行を削除
     row.parentNode.removeChild(row);
+    
     // 再計算
     reCalc();
   }
