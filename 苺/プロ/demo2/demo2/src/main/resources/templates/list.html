@@ -39,55 +39,58 @@
 
     <div id="checkboxContainer">
          <input type="checkbox"> -->
-     
-    <!-- </body>
+
+<!-- </body>
 </body>
-</html> --> 
+</html> -->
 
 
 <html xmlns:th="http://thymeleaf.org">
+
 <head>
-<script th:src="@{/js/list.js}" defer></script>
+    <script th:src="@{/js/list.js}" defer></script>
 </head>
+
 <body onload="reCalc();">
 
-    <input type = "text" name = "title">  
+    <input type="text" name="title">
 
-<table id="formContainer">
-    <thead>
-        <tr>
-            <th>商品名</th>
-            <th>単価</th>
-            <th>数量</th>
-            <th>合計</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th> <input id="text" type="text" name="name" value="" placeholder="商品名"></th>
-            <td>
-                <input type="number" id="tanka_001" name="tanka_001" onchange="reCalc();">円
-            </td>
-            <td>
-                <input type="number" id="suryo_001" name="suryo_001" value="1" onchange="reCalc();">個
-            </td>
-            <td>
-                <input type="number" id="yokokei_001" name="yokokei_001">円
-            </td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">総合計</th>
-            <td>
-                <input type="number" id="total" name="total" readonly value="0">円
-            </td>
-        </tr>
-    </tfoot>
-</table>
-<button onclick="addForm()">+</button>
-<form method="post" th:action="@{/}">
-<input type="submit" value="完了">
-</form>
+    <table id="formContainer">
+        <thead>
+            <tr>
+                <th>商品名</th>
+                <th>単価</th>
+                <th>数量</th>
+                <th>合計</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th> <input id="text" type="text" name="name" value="" placeholder="商品名"></th>
+                <td>
+                    <input type="number" id="tanka_001" name="tanka_001" onchange="reCalc();">円
+                </td>
+                <td>
+                    <input type="number" id="suryo_001" name="suryo_001" value="1" onchange="reCalc();">個
+                </td>
+                <td>
+                    <input type="number" id="yokokei_001" name="yokokei_001">円
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="3">総合計</th>
+                <td>
+                    <input type="number" id="total" name="total" readonly value="0">円
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <button onclick="addForm()">+</button>
+    <form method="post" th:action="@{/}">
+        <input type="submit" value="完了">
+    </form>
 </body>
+
 </html>
