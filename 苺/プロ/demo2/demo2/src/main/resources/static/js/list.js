@@ -57,6 +57,7 @@ function addForm() {
   
     for (var i = 0; i < numFormsToAdd; i++) {
       // 新しい行（tr要素）を作成
+    //   document.createElementで中身のないタグを作る
       var newRow = document.createElement("tr");
 
 
@@ -78,6 +79,7 @@ function addForm() {
       nameInput.name = "name";
       nameInput.placeholder = "商品名";
       checkCell.appendChild(nameInput);
+   
   
       // 単価列を追加
       var priceCell = document.createElement("td");
@@ -111,6 +113,19 @@ function addForm() {
       totalCell.appendChild(totalInput);
       totalCell.appendChild(document.createTextNode("円"));
       newRow.appendChild(totalCell);
+
+      //削除列を追加
+      var deleteCell = document.createElement("td");
+      var deleteButton = document.createElement("button");
+      deleteButton.id = "button_" + (i + 2);
+      deleteButton.textContent = "削除";
+      deleteButton.onclick = function() {
+        deleteForm(this.id);
+      };
+      deleteCell.appendChild(deleteButton);
+      newRow.appendChild(deleteCell);
+  
+
   
       // 新しい行をフォームコンテナに追加
       formContainer.appendChild(newRow);
