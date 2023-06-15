@@ -57,6 +57,7 @@ function addForm() {
   
     for (var i = 0; i < numFormsToAdd; i++) {
       // 新しい行（tr要素）を作成
+    //   document.createElementで中身のないタグを作る
       var newRow = document.createElement("tr");
 
 
