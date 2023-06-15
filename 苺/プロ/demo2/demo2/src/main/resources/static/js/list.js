@@ -109,6 +109,7 @@ function addForm() {
       var totalInput = document.createElement("input");
       totalInput.type = "number";
       totalInput.name = "yokokei";
+      totalInput.value = "0";
       totalInput.id = "yokokei_" + (i + 2); // ユニークなIDを設定
       totalCell.appendChild(totalInput);
       totalCell.appendChild(document.createTextNode("円"));
