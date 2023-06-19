@@ -76,7 +76,7 @@ function addForm() {
      
       var nameInput = document.createElement("input");
       nameInput.type = "text";
-      nameInput.name = "goodsname";
+      nameInput.name = "name";
       nameInput.placeholder = "商品名";
       checkCell.appendChild(nameInput);
    
@@ -85,7 +85,7 @@ function addForm() {
       var priceCell = document.createElement("td");
       var priceInput = document.createElement("input");
       priceInput.type = "number";
-      priceInput.name = "price";
+      priceInput.name = "tanka";
       priceInput.id = "tanka_" + (i + 2); // ユニークなIDを設定
       priceInput.onchange = reCalc;
       priceCell.appendChild(priceInput);
@@ -96,7 +96,7 @@ function addForm() {
       var quantityCell = document.createElement("td");
       var quantityInput = document.createElement("input");
       quantityInput.type = "number";
-      quantityInput.name = "amount";
+      quantityInput.name = "suryo";
       quantityInput.value = "1";
       quantityInput.id = "suryo_" + (i + 2); // ユニークなIDを設定
       quantityInput.onchange = reCalc;

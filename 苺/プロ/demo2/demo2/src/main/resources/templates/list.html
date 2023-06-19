@@ -58,10 +58,9 @@
 
     <input type="text" name="title">
 
-    <form method="post" th:action="@{/regist}">
-
     <table id="formContainer">
         <thead>
+            
             <tr>
                 <th>商品名</th>
                 <th>単価</th>
@@ -72,18 +71,18 @@
         <tbody>
             <tr>
 
-                <th><input type="checkbox"name="check"value="1"> <input id="text" type="text" name="goodsname" value="" placeholder="商品名"></th>
+                <th><input type="checkbox"name="check"value="1"> <input id="text" type="text" name="name" value="" placeholder="商品名"></th>
                 <td>
-                    <input type="number" id="tanka_001" name="price" onchange="reCalc();">円
+                    <input type="number" id="tanka_001" name="tanka_001" onchange="reCalc();">円
                 </td>
                 <td>
-                    <input type="number" id="suryo_001" name="amount" value="1" onchange="reCalc();">個
+                    <input type="number" id="suryo_001" name="suryo_001" value="1" onchange="reCalc();">個
                 </td>
                 <td>
                     <input type="number" id="yokokei_001" name="yokokei_001">円
                 </td>
                 <td>
-                    <button onclick="deleteForm(button_001)" id="button_001">削除</button>       
+                    <button onclick="deleteForm(button_001)" id="button_001" class="btn btn-outline-danger">削除</button>       
                 </td>
             </tr>
         </tbody>
@@ -91,21 +90,21 @@
             <tr>
                 <th colspan="3">総合計</th>
                 <td>
-                    <input type="number" id="total" name="total" readonly value="0" disabled>円
+                    <input type="number" id="total" name="total" readonly value="0">円
                 </td>
             </tr>
         </tfoot>
     </table>
-    <input type="submit" value="登録">
-    </form>
-
-    <button onclick="addForm()" class="btn btn-primary">+</button>
+    <div class="d-flex flex-row-reverse bd-highlight">
+    <button onclick="addForm()" class="btn btn-outline-primary"  >+</button>
     <form method="get" th:action="@{/}">
         <input type="submit" value="完了">
     </form>
-
+    <form method="get" th:action="@{/regist}">
+        <input type="submit" value="登録">
+    </form></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
-</html>
+</html>y

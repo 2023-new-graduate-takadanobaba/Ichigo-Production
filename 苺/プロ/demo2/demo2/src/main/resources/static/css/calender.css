@@ -2,10 +2,9 @@
 
 /*全体*/
 .wrapper{
-    max-width: 900px;
+    max-width: 600px;
     margin: 0 auto;
     color: #666;
-   
 }
 #header {
     text-align: center;
@@ -16,7 +15,6 @@
 
 /*カレンダー*/
 #calendar {
-    text-decoration: none;
     text-align: center;
     width: 100%;
 }
@@ -33,7 +31,6 @@ th, td {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
-    height:70px ;
 }
 /*日曜日*/
 td:first-child {
@@ -66,7 +63,7 @@ td.today {
 }
 #next-prev-button button{
     cursor: pointer;
-    background: #4aa7b7;
+    background: #B78D4A;
     color: #fff;
     border: 1px solid #B78D4A;
     border-radius: 4px;
@@ -75,7 +72,7 @@ td.today {
     margin: 1rem 0;
 }
 #next-prev-button button:hover{
-    background-color: #9c92d4;
+    background-color: #D4BB92;
     border-color: #D4BB92;
 }
 #prev {
