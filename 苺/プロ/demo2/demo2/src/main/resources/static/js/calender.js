@@ -133,4 +133,3 @@ function isHoliday(year, month, day) {
     }
     return [false, ""];
 }
-もどすぞ
