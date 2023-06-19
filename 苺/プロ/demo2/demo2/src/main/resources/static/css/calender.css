@@ -19,6 +19,7 @@
 #calendar {
     text-decoration: none;
     text-align: center;
+    font-size: large;
     width: 100%;
 }
 table {
@@ -73,7 +74,7 @@ td.today {
     color: #fff;
     border: 1px solid #B78D4A;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 30px;
     padding: 0.5rem 2rem;
     margin: 1rem 0;
 }
@@ -86,4 +87,12 @@ td.today {
 }
 #next {
     float: right;
+}
+a{
+    text-decoration: none;
+    color:#000
+}
+
+a:hover{
+    color:#43f6ff;
 }
