@@ -39,11 +39,11 @@ th, td {
 }
 /*日曜日*/
 td:first-child {
-    color: red;
+    background-color: rgb(252, 248, 213);
 }
 /*土曜日*/
 td:last-child {
-    color: blue;
+    background-color: rgb(252, 248, 213);
 }
 
 /*祝日*/
@@ -108,4 +108,8 @@ form{
 }
 .color{
     border-radius:20px;
+}
+
+td.first-child-holoday{
+    color:red;
 }
