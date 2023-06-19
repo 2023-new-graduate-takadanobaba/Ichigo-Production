@@ -60,6 +60,7 @@
 
     <table id="formContainer">
         <thead>
+            
             <tr>
                 <th>商品名</th>
                 <th>単価</th>
@@ -81,7 +82,7 @@
                     <input type="number" id="yokokei_001" name="yokokei_001">円
                 </td>
                 <td>
-                    <button onclick="deleteForm(button_001)" id="button_001">削除</button>       
+                    <button onclick="deleteForm(button_001)" id="button_001" class="btn btn-outline-danger">削除</button>       
                 </td>
             </tr>
         </tbody>
@@ -94,14 +95,14 @@
             </tr>
         </tfoot>
     </table>
-    <button onclick="addForm()" class="btn btn-primary">+</button>
+    <div class="d-flex flex-row-reverse bd-highlight">
+    <button onclick="addForm()" class="btn btn-outline-primary"  >+</button>
     <form method="get" th:action="@{/}">
         <input type="submit" value="完了">
     </form>
-
     <form method="get" th:action="@{/regist}">
         <input type="submit" value="登録">
-    </form>
+    </form></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
