@@ -19,11 +19,11 @@
 #calendar {
     text-decoration: none;
     text-align: center;
-    font-size: large;
+    font-size: 20px;
     width: 100%;
 }
 table {
-    outline: 2px solid #ddd;
+    outline: 5px solid #ddd;
     border-collapse: collapse;
     width: 100%;
 }
@@ -31,7 +31,7 @@ th {
     color: #000;
 }
 th, td {
-    outline: 1px solid #ddd;
+    outline: 2px solid #ddd;
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
