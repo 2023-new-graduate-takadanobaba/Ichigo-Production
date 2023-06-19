@@ -27,7 +27,7 @@ public class CalenderController{
     }
 
     //formの完了押したときに動く機能
-    @RequestMapping(path="/doRegister",method=RequestMethod.POST)
+    @RequestMapping(path="/",method=RequestMethod.POST)
     public String doRegister(RegisterForm form,HttpSession session){
         //CRUDで登録する記述をする
         return"calender";
