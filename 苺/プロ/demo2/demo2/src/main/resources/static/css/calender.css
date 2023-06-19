@@ -97,6 +97,11 @@ a:hover{
     color:#43f6ff;
 }
 
-input[type="submit"]{
-    font-size: 50px;
+form{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 18px;
+}
+.color:hover{
+    background-color:#e97979
 }
