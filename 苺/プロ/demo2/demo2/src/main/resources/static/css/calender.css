@@ -73,7 +73,7 @@ td.today {
     background: #4aa7b7;
     color: #fff;
     border: 1px solid #B78D4A;
-    border-radius: 4px;
+    border-radius: 20px;
     font-size: 30px;
     padding: 0.5rem 2rem;
     margin: 1rem 0;
@@ -82,6 +82,7 @@ td.today {
     background-color: #9c92d4;
     border-color: #D4BB92;
 }
+
 #prev {
     float: left;
 }
@@ -104,4 +105,7 @@ form{
 }
 .color:hover{
     background-color:#e97979
+}
+.color{
+    border-radius:20px;
 }
