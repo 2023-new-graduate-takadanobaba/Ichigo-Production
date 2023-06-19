@@ -96,3 +96,7 @@ a{
 a:hover{
     color:#43f6ff;
 }
+
+input[type="submit"]{
+    font-size: 50px;
+}
