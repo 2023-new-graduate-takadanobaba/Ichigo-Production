@@ -3,6 +3,7 @@ package com.example.demo2.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -12,6 +13,7 @@ import jakarta.persistence.Table;
 
 public class KaimonoList {
     @Id
+    @GeneratedValue
 	private Integer id;
 
 	@Column

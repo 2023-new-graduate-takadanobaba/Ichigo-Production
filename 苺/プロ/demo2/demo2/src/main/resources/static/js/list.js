@@ -118,6 +118,7 @@ function addForm() {
       //削除列を追加
       var deleteCell = document.createElement("td");
       var deleteButton = document.createElement("button");
+      deleteButton.type="button";
       deleteButton.id = "button_" + (i + 2);
       deleteButton.textContent = "削除";
       deleteButton.onclick = function() {
