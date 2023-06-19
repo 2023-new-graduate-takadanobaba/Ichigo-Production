@@ -58,7 +58,7 @@ public String regist(@RequestParam("goodsname") List<String> goodsNames,
 
     for (int i = 0; i < goodsNames.size(); i++) {
         KaimonoList kaimonoList = new KaimonoList();
-        kaimonoList.setId(i + 1);
+        //kaimonoList.setId(i + 1);
         kaimonoList.setGoodsname(goodsNames.get(i));
         kaimonoList.setPrice(prices.get(i));
         kaimonoList.setAmount(amounts.get(i));
