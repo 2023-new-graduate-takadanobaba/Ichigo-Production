@@ -134,6 +134,7 @@ function addForm() {
     }
     // 削除ボタンをクリックした時の処理
 function deleteForm(buttonId) {
+    // alert(buttonId);
     // ボタンのIDから行を特定
     var row = document.getElementById(buttonId).parentNode.parentNode;
     // 行を削除
