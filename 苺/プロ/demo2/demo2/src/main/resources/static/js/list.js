@@ -4,11 +4,13 @@ function gyo(obj)
     return obj.parentElement.parentElement ;
 }
 
+
 // 指定したエレメント(input)と同じ行にある単価を取得
 function tanka(obj)
 {
     return gyo(obj).querySelectorAll("input[id^=tanka]")[0].value ;
 }
+
 
 // 指定したエレメント(input)と同じ行にある数量を取得
 function suryo(obj)
