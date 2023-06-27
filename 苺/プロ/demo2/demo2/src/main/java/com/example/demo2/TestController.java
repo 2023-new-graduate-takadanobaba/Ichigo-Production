@@ -26,44 +26,49 @@ public class TestController {
     ListtoformRepository ListtoformRepository;
 
     @GetMapping("/test2")
-    public String test2(){
+    public String test2() {
         return "test2";
-    }  
+    }
+
     @GetMapping("/test")
-    public String test(Model model){
-        model.addAttribute("items",KaimonoListrepository.findAll());
+    public String test(Model model) {
+        model.addAttribute("items", KaimonoListrepository.findAll());
         return "test";
     }
 
     @GetMapping("/")
-    public String calender(){
+    public String calender() {
         return "calender";
     }
 
-@PostMapping("/test/regist")
-public String regist(@RequestParam("goodsname") List<String> goodsNames,
-                     @RequestParam("price") List<Integer> prices,
-                     @RequestParam("amount") List<Integer> amounts) {
+    @PostMapping("/test/regist")
+    public String regist(@RequestParam("check") List<Integer> checks,
+            @RequestParam("goodsname") List<String> goodsNames,
+            @RequestParam("price") List<Integer> prices,
+            @RequestParam("amount") List<Integer> amounts) {
 
-    List<Listtoform> Listtoforms = new ArrayList<>();
+        List<Listtoform> Listtoforms = new ArrayList<>();
 
-    for (int i = 0; i < goodsNames.size(); i++) {
-        Listtoform Listtoform = new Listtoform();
-        Date now = new Date();
-        //kaimonoList.setId(i + 1);
-        Listtoform.setCreate_time(now);
-        Listtoform.setGoodsname(goodsNames.get(i));
-        Listtoform.setPrice(prices.get(i));
-        Listtoform.setAmount(amounts.get(i));
+        for (int i = 0; i < goodsNames.size(); i++) {
 
-        Listtoforms.add(Listtoform);
+            if (checks.get(i) == 1) {
+                Listtoform Listtoform = new Listtoform();
+                Date now = new Date();
+                // kaimonoList.setId(i + 1);
+                Listtoform.setCreate_time(now);
+                Listtoform.setGoodsname(goodsNames.get(i));
+                Listtoform.setPrice(prices.get(i));
+                Listtoform.setAmount(amounts.get(i));
 
+                Listtoforms.add(Listtoform);
+
+                Listtoforms = ListtoformRepository.saveAll(Listtoforms);
+            }
+        }
+
+        
+
+        return "test";
     }
-
-    Listtoforms = ListtoformRepository.saveAll(Listtoforms);
-
-    return "test";
-}
-
 
 }
