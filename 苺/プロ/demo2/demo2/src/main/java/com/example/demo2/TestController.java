@@ -1,6 +1,7 @@
 package com.example.demo2;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +12,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo2.entity.KaimonoList;
+import com.example.demo2.entity.Listtoform;
 import com.example.demo2.repository.KaimonoListRepository;
+import com.example.demo2.repository.ListtoformRepository;
 
 @Controller
 public class TestController {
 
     @Autowired
-    KaimonoListRepository repository;
+    KaimonoListRepository KaimonoListrepository;
+
+    @Autowired
+    ListtoformRepository ListtoformRepository;
 
     @GetMapping("/test2")
     public String test2(){
@@ -25,7 +31,7 @@ public class TestController {
     }  
     @GetMapping("/test")
     public String test(Model model){
-        model.addAttribute("items",repository.findAll());
+        model.addAttribute("items",KaimonoListrepository.findAll());
         return "test";
     }
 
@@ -39,20 +45,22 @@ public String regist(@RequestParam("goodsname") List<String> goodsNames,
                      @RequestParam("price") List<Integer> prices,
                      @RequestParam("amount") List<Integer> amounts) {
 
-    List<KaimonoList> kaimonoLists = new ArrayList<>();
+    List<Listtoform> Listtoforms = new ArrayList<>();
 
     for (int i = 0; i < goodsNames.size(); i++) {
-        KaimonoList kaimonoList = new KaimonoList();
+        Listtoform Listtoform = new Listtoform();
+        Date now = new Date();
         //kaimonoList.setId(i + 1);
-        kaimonoList.setGoodsname(goodsNames.get(i));
-        kaimonoList.setPrice(prices.get(i));
-        kaimonoList.setAmount(amounts.get(i));
+        Listtoform.setCreate_time(now);
+        Listtoform.setGoodsname(goodsNames.get(i));
+        Listtoform.setPrice(prices.get(i));
+        Listtoform.setAmount(amounts.get(i));
 
-        kaimonoLists.add(kaimonoList);
+        Listtoforms.add(Listtoform);
 
     }
 
-    kaimonoLists = repository.saveAll(kaimonoLists);
+    Listtoforms = ListtoformRepository.saveAll(Listtoforms);
 
     return "test";
 }
