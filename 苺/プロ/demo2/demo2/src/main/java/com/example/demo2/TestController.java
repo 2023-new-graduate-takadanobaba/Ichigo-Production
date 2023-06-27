@@ -42,7 +42,7 @@ public class TestController {
     }
 
     @PostMapping("/test/regist")
-    public String regist(@RequestParam("check") List<Integer> checks,
+    public String registTest(@RequestParam("check") List<Integer> checks,
             @RequestParam("goodsname") List<String> goodsNames,
             @RequestParam("price") List<Integer> prices,
             @RequestParam("amount") List<Integer> amounts) {
