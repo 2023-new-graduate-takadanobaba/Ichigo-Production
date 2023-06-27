@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // 指定したエレメント(input)が所属する行(tr)を取得
 function gyo(obj)
 {
@@ -144,3 +145,6 @@ function deleteForm(buttonId) {
     reCalc();
   }
   }
+=======
+// にゃー
+>>>>>>> bf7474df8b93bf4a0960f770c57c0cde203d4e5b
