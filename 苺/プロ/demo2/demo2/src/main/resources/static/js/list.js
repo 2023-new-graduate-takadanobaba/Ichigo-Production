@@ -143,4 +143,4 @@ function deleteForm(button) {
   
     // 再計算
     reCalc();
-  }}
+  }}a
