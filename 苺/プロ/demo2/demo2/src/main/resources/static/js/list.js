@@ -122,7 +122,8 @@ function addForm() {
       deleteButton.id = "button_" + (i + 2);
       deleteButton.textContent = "削除";
       deleteButton.onclick = function() {
-        deleteForm(this.id);
+        deleteForm(this);
+        // this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
       };
       deleteCell.appendChild(deleteButton);
       newRow.appendChild(deleteCell);
@@ -133,13 +134,13 @@ function addForm() {
       formContainer.appendChild(newRow);
     }
     // 削除ボタンをクリックした時の処理
-function deleteForm(buttonId) {
-    // ボタンのIDから行を特定
-    var row = document.getElementById(buttonId).parentNode.parentNode;
+function deleteForm(button) {
+    // ボタンの親要素である<td>要素を取得
+    // 行(<tr>)要素を取得
+    var row = button.parentNode.parentNode;
     // 行を削除
     row.parentNode.removeChild(row);
-    
+  
     // 再計算
     reCalc();
-  }
-  }
+  }}
