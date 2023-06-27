@@ -37,7 +37,7 @@ public class ListController {
             @RequestParam("amount") List<Integer> amounts) {
 
         List<KaimonoList> kaimonoLists = new ArrayList<>();
-        List<Listtoform> Listtoforms = new ArrayList<>(); 
+        List<Listtoform> Listtoforms = new ArrayList<>();
 
         for (int i = 0; i < goodsNames.size(); i++) {
 
@@ -53,24 +53,20 @@ public class ListController {
                 Listtoforms.add(Listtoform);
 
                 Listtoforms = ListtoformRepository.saveAll(Listtoforms);
+            } else if (checks.get(i) == 0) {
+                KaimonoList kaimonoList = new KaimonoList();
+                // kaimonoList.setId(i + 1);
+                kaimonoList.setGoodsname(goodsNames.get(i));
+                kaimonoList.setPrice(prices.get(i));
+                kaimonoList.setAmount(amounts.get(i));
+
+                kaimonoLists.add(kaimonoList);
+                kaimonoLists = repository.saveAll(kaimonoLists);
             }
-            else if (checks.get(i) == 0){
-            KaimonoList kaimonoList = new KaimonoList();
-            // kaimonoList.setId(i + 1);
-            kaimonoList.setGoodsname(goodsNames.get(i));
-            kaimonoList.setPrice(prices.get(i));
-            kaimonoList.setAmount(amounts.get(i));
 
-            kaimonoLists.add(kaimonoList);
-            kaimonoLists = repository.saveAll(kaimonoLists);
-
-            kaimonoLists = repository.saveAll(kaimonoLists);
         }
 
-        
-        }
-    
         return "list";
     }
-    
+
 }
