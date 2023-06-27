@@ -8,6 +8,51 @@
 </head>
 <body>
     test
+
+    
+
+    <form method="post" th:action="@{/test/regist}">
+
+        <table id="formContainer">
+            <thead>
+                
+                <tr>
+                    <th>商品名</th>
+                    <th>単価</th>
+                    <th>数量</th>
+                    <th>合計</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+    
+                    <th><input type="checkbox"name="check"value="1"> <input id="text" type="text" name="goodsname" value="" placeholder="商品名"></th>
+                    <td>
+                        <input type="number" id="tanka_001" name="price" onchange="reCalc();">円
+                    </td>
+                    <td>
+                        <input type="number" id="suryo_001" name="amount" value="1" onchange="reCalc();">個
+                    </td>
+                    <td>
+                        <input type="number" id="yokokei_001" name="yokokei_001">円
+                    </td>
+                    <td>
+                        <button type="button" onclick="deleteForm(button_001)" id="button_001" class="btn btn-outline-danger">削除</button>       
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3">総合計</th>
+                    <td>
+                        <input type="number" id="total" name="total" readonly value="0">円
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <input type="submit" value="登録">
+    </form>
+
     <table>
         <tr>
             <th>id</th>
@@ -22,5 +67,7 @@
             <td th:text="${item.amount}"></td>
         </tr>
     </table>
+
+
 </body>
 </html>
