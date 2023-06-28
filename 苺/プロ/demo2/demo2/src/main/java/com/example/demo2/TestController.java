@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo2.entity.KaimonoList;
 import com.example.demo2.entity.Listtoform;
 import com.example.demo2.repository.KaimonoListRepository;
 import com.example.demo2.repository.ListtoformRepository;

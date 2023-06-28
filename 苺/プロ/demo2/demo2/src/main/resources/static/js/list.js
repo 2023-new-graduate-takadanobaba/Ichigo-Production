@@ -31,16 +31,12 @@ function tatekei() {
 
 // 再計算
 function reCalc() {
+    document.getElementById("total").value = 0; // 合計値を0にリセット
+
+    // 再計算
     document.getElementById("total").value = tatekei();
-    return;
 }
 
-//追加機能
-// function addForm()
-// {
-//     var form = "<p></p>";
-//     document.querySelector("#formContainer").innerHTML = form;
-// }
 
 function addForm() {
     var formContainer = document.getElementById("formContainer");
