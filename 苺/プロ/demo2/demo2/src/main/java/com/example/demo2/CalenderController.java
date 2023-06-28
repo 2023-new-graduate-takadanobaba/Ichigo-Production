@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.hibernate.grammars.hql.HqlParser.DateContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +31,7 @@ public class CalenderController{
         SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
         try{
             Date listtoForms = sdFormat.parse(date);
-            model.addAttribute("listtoForms",repository.findBycreateTime(listtoForms));
+            model.addAttribute("listtoForms",repository.findByCreateTime(listtoForms));
             
 
         }catch (ParseException e){
