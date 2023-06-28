@@ -29,12 +29,12 @@ public class CalenderController{
     public String Form(@PathVariable String date, Model model){
         SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
         try{
-            Date listtoForms = sdFormat.parse(date);
-            model.addAttribute("listtoForms",repository.findByCreateTime(listtoForms));
+            Date boughtDate = sdFormat.parse(date);
+            model.addAttribute("boughts",repository.findByCreateTimeContaining(boughtDate));
             
 
         }catch (ParseException e){
-            
+
         }
         
         return "form";
