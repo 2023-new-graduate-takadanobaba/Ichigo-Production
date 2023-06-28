@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo2.entity.Listtoform;
+import com.example.demo2.entity.Bought;
 import com.example.demo2.repository.KaimonoListRepository;
-import com.example.demo2.repository.ListtoformRepository;
+import com.example.demo2.repository.BoughtRepository;
 
 @Controller
 public class TestController {
@@ -22,7 +22,7 @@ public class TestController {
     KaimonoListRepository KaimonoListrepository;
 
     @Autowired
-    ListtoformRepository ListtoformRepository;
+    BoughtRepository ListtoformRepository;
 
     @GetMapping("/test2")
     public String test2() {
@@ -46,12 +46,12 @@ public class TestController {
             @RequestParam("price") List<Integer> prices,
             @RequestParam("amount") List<Integer> amounts) {
 
-        List<Listtoform> Listtoforms = new ArrayList<>();
+        List<Bought> Listtoforms = new ArrayList<>();
 
         for (int i = 0; i < goodsNames.size(); i++) {
 
             if (checks.get(i) == 1) {
-                Listtoform Listtoform = new Listtoform();
+                Bought Listtoform = new Bought();
                 Date now = new Date();
                 // kaimonoList.setId(i + 1);
                 Listtoform.setCreateTime(now);
