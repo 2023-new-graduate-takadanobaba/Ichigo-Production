@@ -54,7 +54,7 @@ public class TestController {
                 Listtoform Listtoform = new Listtoform();
                 Date now = new Date();
                 // kaimonoList.setId(i + 1);
-                Listtoform.setCreate_time(now);
+                Listtoform.setCreateTime(now);
                 Listtoform.setGoodsname(goodsNames.get(i));
                 Listtoform.setPrice(prices.get(i));
                 Listtoform.setAmount(amounts.get(i));
