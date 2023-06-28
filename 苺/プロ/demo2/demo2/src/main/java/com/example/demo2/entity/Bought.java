@@ -1,7 +1,5 @@
 package com.example.demo2.entity;
 
-import java.util.Date;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,7 +15,7 @@ public class Bought{
     private int id;
 
     @Column
-    private Date createTime;
+    private String createTime;
 
     @Column
     private String goodsname;
@@ -36,11 +34,11 @@ public class Bought{
         this.id = id;
     }
 
-   public Date getCreateTime() {
+   public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
