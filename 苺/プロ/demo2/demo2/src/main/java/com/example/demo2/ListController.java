@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo2.entity.Listtoform;
+import com.example.demo2.entity.Bought;
 import com.example.demo2.entity.KaimonoList;
-import com.example.demo2.repository.ListtoformRepository;
+import com.example.demo2.repository.BoughtRepository;
 import com.example.demo2.repository.KaimonoListRepository;
 
 @Controller
@@ -23,13 +23,21 @@ public class ListController {
     KaimonoListRepository repository;
 
     @Autowired
-    ListtoformRepository ListtoformRepository;
+    BoughtRepository boughtRepository;
 
     @GetMapping("/list")
     public String showItemList(Model model) {
-        model.addAttribute("items", repository.findAll());
+ model.addAttribute("items", repository.findAll());
+ 
+
+
+
+
+
+        
         return "list";
     }
+    
 
     @PostMapping("/regist")
     public String regist(@RequestParam("check") List<Integer> checks,
@@ -38,22 +46,22 @@ public class ListController {
             @RequestParam("amount") List<Integer> amounts) {
 
         List<KaimonoList> kaimonoLists = new ArrayList<>();
-        List<Listtoform> Listtoforms = new ArrayList<>();
+        List<Bought> boughts = new ArrayList<>();
 
         for (int i = 0; i < goodsNames.size(); i++) {
 
             if (checks.get(i) == 1) {
-                Listtoform Listtoform = new Listtoform();
+                Bought bought = new Bought();
                 Date now = new Date();
                 // kaimonoList.setId(i + 1);
-                Listtoform.setCreateTime(now);
-                Listtoform.setGoodsname(goodsNames.get(i));
-                Listtoform.setPrice(prices.get(i));
-                Listtoform.setAmount(amounts.get(i));
+                bought.setCreateTime(now);
+                bought.setGoodsname(goodsNames.get(i));
+                bought.setPrice(prices.get(i));
+                bought.setAmount(amounts.get(i));
 
-                Listtoforms.add(Listtoform);
+                boughts.add(bought);
 
-                Listtoforms = ListtoformRepository.saveAll(Listtoforms);
+                boughts = boughtRepository.saveAll(boughts);
             } else if (checks.get(i) == 0) {
                 KaimonoList kaimonoList = new KaimonoList();
                 // kaimonoList.setId(i + 1);
