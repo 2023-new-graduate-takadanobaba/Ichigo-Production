@@ -1,6 +1,10 @@
 package com.example.demo2;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -16,8 +20,9 @@ public class CalenderController{
 
      //formを表示する
     @RequestMapping(path="/form/{date}",method=RequestMethod.GET)
-    public String Form(){
-            return"form";
+    public String Form(@PathVariable String date, Model model){
+        model.addAttribute("test",date);
+        return "form";
     }
 
     //カレンダーを表示する
