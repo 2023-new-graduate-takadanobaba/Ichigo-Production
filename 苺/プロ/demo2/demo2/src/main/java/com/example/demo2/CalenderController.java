@@ -10,8 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import com.example.demo2.entity.Listtoform;
-import com.example.demo2.repository.ListtoformRepository;
+import com.example.demo2.repository.BoughtRepository;
 
 import com.example.demo2.form.RegisterForm;
 
@@ -23,19 +22,19 @@ public class CalenderController{
      * @return
      */
     @Autowired
-    ListtoformRepository repository;
+    BoughtRepository repository;
 
      //formを表示する
     @RequestMapping(path="/form/{date}",method=RequestMethod.GET)
     public String Form(@PathVariable String date, Model model){
         SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
         try{
-            Date listtoForms = sdFormat.parse(date);
-            model.addAttribute("listtoForms",repository.findByCreateTime(listtoForms));
+            Date boughtDate = sdFormat.parse(date);
+            model.addAttribute("boughts",repository.findByCreateTimeContaining(boughtDate));
             
 
         }catch (ParseException e){
-            
+
         }
         
         return "form";
