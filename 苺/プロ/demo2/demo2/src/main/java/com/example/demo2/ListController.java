@@ -9,9 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo2.entity.Listtoform;
+import com.example.demo2.form.RegisterForm;
 import com.example.demo2.entity.KaimonoList;
 import com.example.demo2.repository.ListtoformRepository;
 import com.example.demo2.repository.KaimonoListRepository;
@@ -69,5 +71,9 @@ public class ListController {
 
         return "list";
     }
-
+@RequestMapping(path = "/gorori")
+public String delete (RegisterForm form){
+    repository.deleteById(form.getId());
+    return "redirect:/list";
+}
 }
