@@ -52,6 +52,25 @@
     </table>
     <input type="submit" value="登録">
 </form>
+
+<table>
+    <tr>
+    <th>商品番号</th>
+    <th>商品名</th>
+    <th>価格</th>
+    </tr>
+    <tr th:each="item: ${items}">
+    <td th:text="${item.id}"></td>
+    <td th:text="${item.goodsname}"></td>
+    <td th:text="${item.price}"></td>
+    <td th:text="${item.amount}"></td>
+    </tr>
+    </table>
+
+
+
+
+
     <div class="d-flex flex-row-reverse bd-highlight">
     <button onclick="addForm()" class="btn btn-outline-primary" >+</button>
     <form method="get" th:action="@{/}">
