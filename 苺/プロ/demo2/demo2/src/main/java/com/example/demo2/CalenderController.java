@@ -1,7 +1,10 @@
 package com.example.demo2;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.hibernate.grammars.hql.HqlParser.DateContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +24,14 @@ public class CalenderController{
      //formを表示する
     @RequestMapping(path="/form/{date}",method=RequestMethod.GET)
     public String Form(@PathVariable String date, Model model){
-        model.addAttribute("test",date);
+        SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
+        try{
+            Date test = sdFormat.parse(date);
+            model.addAttribute("test",test);
+        }catch (ParseException e){
+            
+        }
+        
         return "form";
     }
 
