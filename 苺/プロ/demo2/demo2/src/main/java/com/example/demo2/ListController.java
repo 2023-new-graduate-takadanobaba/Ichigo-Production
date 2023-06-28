@@ -79,9 +79,9 @@ public class ListController {
 
         return "list";
     }
-@RequestMapping(path = "/gorori")
-public String delete (RegisterForm form){
-    repository.deleteById(form.getId());
-    return "redirect:/list";
-}
+// @RequestMapping(path = "/gorori")
+// public String delete (RegisterForm form){
+//     repository.deleteById(form.getId());
+//     return "redirect:/list";
+// }
 }
