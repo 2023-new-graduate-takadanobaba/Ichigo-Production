@@ -5,11 +5,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.hibernate.grammars.hql.HqlParser.DateContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import com.example.demo2.entity.Listtoform;
+import com.example.demo2.repository.ListtoformRepository;
 
 import com.example.demo2.form.RegisterForm;
 
@@ -20,14 +23,18 @@ public class CalenderController{
     /**
      * @return
      */
+    @Autowired
+    ListtoformRepository repository;
 
      //formを表示する
     @RequestMapping(path="/form/{date}",method=RequestMethod.GET)
     public String Form(@PathVariable String date, Model model){
         SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
         try{
-            Date test = sdFormat.parse(date);
-            model.addAttribute("test",test);
+            Date listtoForms = sdFormat.parse(date);
+            model.addAttribute("listtoForms",repository.findBycreateTime(listtoForms));
+            
+
         }catch (ParseException e){
             
         }
