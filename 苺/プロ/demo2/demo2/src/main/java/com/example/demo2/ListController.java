@@ -12,12 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-<<<<<<< HEAD
-import com.example.demo2.entity.Listtoform;
-import com.example.demo2.form.RegisterForm;
-=======
 import com.example.demo2.entity.Bought;
->>>>>>> 5cbe22970f30f1f57ecb85d407e045d78d3c7dbd
 import com.example.demo2.entity.KaimonoList;
 import com.example.demo2.repository.BoughtRepository;
 import com.example.demo2.repository.KaimonoListRepository;
@@ -83,9 +78,9 @@ public class ListController {
 
         return "list";
     }
-@RequestMapping(path = "/gorori")
-public String delete (RegisterForm form){
-    repository.deleteById(form.getId());
-    return "redirect:/list";
-}
+// @RequestMapping(path = "/gorori")
+// public String delete (RegisterForm form){
+//     repository.deleteById(form.getId());
+//     return "redirect:/list";
+// }
 }
