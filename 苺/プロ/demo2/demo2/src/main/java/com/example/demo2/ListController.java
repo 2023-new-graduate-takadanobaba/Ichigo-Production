@@ -27,17 +27,9 @@ public class ListController {
 
     @GetMapping("/list")
     public String showItemList(Model model) {
- model.addAttribute("items", repository.findAll());
- 
-
-
-
-
-
-        
+        model.addAttribute("items", repository.findAll());
         return "list";
     }
-    
 
     @PostMapping("/regist")
     public String regist(@RequestParam("check") List<Integer> checks,
