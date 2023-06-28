@@ -48,11 +48,10 @@
     <th>価格</th>
     <th>数</th>
     </tr>
-    <tr>
-        <td th:each="Listtoform: ${listtoForms}"></td>
-        <td th:text="${listtoForm.goodsname}"></td>
-        <td th:text="${listtoForm.price}"></td>
-        <td th:text="${listtoForm.amount}"></td>
+    <tr th:each="listtoform: ${listtoForms}">
+        <td th:text="${listtoform.goodsname}"></td>
+        <td th:text="${listtoform.price}"></td>
+        <td th:text="${listtoform.amount}"></td>
     </tr>
     </table>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
