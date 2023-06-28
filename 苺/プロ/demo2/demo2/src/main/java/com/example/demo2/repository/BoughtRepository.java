@@ -9,4 +9,5 @@ import com.example.demo2.entity.Bought;
 
 public interface BoughtRepository extends JpaRepository<Bought, Integer> {
     List<Bought>findByCreateTime(Date date);   
+    List<Bought>findByCreateTimeContaining(Date date);   
 }
