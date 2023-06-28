@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <h1 th:text="${listtoForms}"></h1>
+    <h1 th:text="${boughts}"></h1>
     <div>購入商品一覧</div>
     <form method="post" th:action="@{/}">
         商品名:<input type="text" name="commodity"/>
@@ -48,10 +48,10 @@
     <th>価格</th>
     <th>数</th>
     </tr>
-    <tr th:each="listtoform: ${listtoForms}">
-        <td th:text="${listtoform.goodsname}"></td>
-        <td th:text="${listtoform.price}"></td>
-        <td th:text="${listtoform.amount}"></td>
+    <tr th:each="bought: ${boughts}">
+        <td th:text="${bought.goodsname}"></td>
+        <td th:text="${bought.price}"></td>
+        <td th:text="${bought.amount}"></td>
     </tr>
     </table>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
