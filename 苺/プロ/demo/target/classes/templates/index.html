@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .today {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calendar</h1>
+    <h2 th:text="${month_name + ' ' + year}"></h2>
+    <table>
+        <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+        </tr>
+        <tr th:each="week : ${calendar}">
+            <td th:each="day : ${week}" th:class="${day.isToday() ? 'today' : ''}" th:text="${day.getDay()}"></td>
+        </tr>
+    </table>
+</body>
+</html>
