@@ -30,18 +30,24 @@ public class ListController {
         return "list";
     }
 
+    // 登録ボタンを押したら下のfor文が始まります。
+    // RequestParamの意味()の中のhtmlの要素から値を取り出している
     @PostMapping("/regist")
     public String regist(@RequestParam("check") List<Integer> checks,
             @RequestParam("goodsname") List<String> goodsNames,
             @RequestParam("price") List<Integer> prices,
             @RequestParam("amount") List<Integer> amounts) {
 
+        // entityを格納するためのただのlistを生成
         List<KaimonoList> kaimonoLists = new ArrayList<>();
         List<Listtoform> Listtoforms = new ArrayList<>();
-
+        // forの条件...goodsnameの要素数(←listの行の数を示す 他のpricesとかでもok)
+        // より小さい場合（<=じゃない理由はi=0だから）
         for (int i = 0; i < goodsNames.size(); i++) {
-
+            // checkboxがチェックされてる場合
+            // 条件i行目のchecksを取得し、その値が１ならばif実行
             if (checks.get(i) == 1) {
+                // entity生成
                 Listtoform Listtoform = new Listtoform();
                 Date now = new Date();
                 // kaimonoList.setId(i + 1);
@@ -53,7 +59,10 @@ public class ListController {
                 Listtoforms.add(Listtoform);
 
                 Listtoforms = ListtoformRepository.saveAll(Listtoforms);
-            } else if (checks.get(i) == 0) {
+            }
+            // 条件はi行目のchecksを取得し０（チェックしてなければ）else if実行
+            // チェックしてない状態を０にするのはlist.htmlでtype=hiddenで設定
+            else if (checks.get(i) == 0) {
                 KaimonoList kaimonoList = new KaimonoList();
                 // kaimonoList.setId(i + 1);
                 kaimonoList.setGoodsname(goodsNames.get(i));
