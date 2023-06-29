@@ -16,12 +16,14 @@
     <th>商品名</th>
     <th>価格</th>
     <th>数</th>
+    <th>合計</th>
     </tr>
     <tr th:each="bought: ${boughts}">
         <td th:text="${bought.goodsname}"></td>
         <td th:text="${bought.price}"></td>
         <td th:text="${bought.amount}"></td>
-        <td th:text="${bought.total}"></td>
+        <td th:text="${bought.total}" id="total"></td>
+        <td><input type="number" id="aaaaa" name="total" readonly value="0">円</td>
     </tr>
     </table>
     <form method="post" th:action="@{/}">
