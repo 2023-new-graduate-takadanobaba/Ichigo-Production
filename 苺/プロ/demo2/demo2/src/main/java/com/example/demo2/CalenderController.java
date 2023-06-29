@@ -29,7 +29,7 @@ public class CalenderController {
     @RequestMapping(path = "/form/{date}", method = RequestMethod.GET)
     public String Form(@PathVariable String date, Model model) {
 
-        model.addAttribute("listtoForms", repository.findByCreateTimeContaining(date));
+        model.addAttribute("boughts", repository.findByCreateTimeContaining(date));
 
         return "form";
     }
