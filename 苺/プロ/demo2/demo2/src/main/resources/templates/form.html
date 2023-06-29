@@ -8,10 +8,10 @@
 
 <title>Insert title here</title>
 </head>
-<body onload="total();">
+<body onload="calculateSum();">
     <h1 th:text="${listtoForms}"></h1>
     <div>購入商品一覧</div>
-    <table>
+    <table id="myTable">
     <tr>
     <th>商品名</th>
     <th>価格</th>
@@ -23,9 +23,10 @@
         <td th:text="${bought.price}"></td>
         <td th:text="${bought.amount}"></td>
         <td th:text="${bought.total}" id="total"></td>
-        <td><input type="number" id="aaaaa" name="total" readonly value="0">円</td>
+        <td><input type="hidden" th:value="${bought.id}"></td>
     </tr>
     </table>
+    <input type="number" id="result" name="total" readonly value="0">円
     <form method="post" th:action="@{/}">
         商品名:<input type="text" name="commodity"/>
         金額:<input type="number" name="price"/>
