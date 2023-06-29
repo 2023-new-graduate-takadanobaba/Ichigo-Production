@@ -55,7 +55,7 @@ public class ListController {
                 bought.setGoodsname(goodsNames.get(i));
                 bought.setPrice(prices.get(i));
                 bought.setAmount(amounts.get(i));
-
+                bought.setTotal(prices.get(i)*amounts.get(i));
                 boughts.add(bought);
 
                 boughts = boughtRepository.saveAll(boughts);
