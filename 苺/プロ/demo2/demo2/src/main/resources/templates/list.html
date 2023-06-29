@@ -55,11 +55,16 @@
 
 <table>
     <tr>
+        <th> </th>
     <th>商品番号</th>
+
     <th>商品名</th>
     <th>価格</th>
     </tr>
     <tr th:each="item: ${items}">
+        <td>
+            <input type="checkbox"name="check"value="1">
+        </td>
     <td th:text="${item.id}"></td>
     <td th:text="${item.goodsname}"></td>
     <td th:text="${item.price}"></td>
@@ -77,6 +82,7 @@
 
     <div class="d-flex flex-row-reverse bd-highlight">
     <button onclick="addForm()" class="btn btn-outline-primary" >+</button>
+
     <form method="get" th:action="@{/}">
         <input type="submit" value="完了">
     </form>
