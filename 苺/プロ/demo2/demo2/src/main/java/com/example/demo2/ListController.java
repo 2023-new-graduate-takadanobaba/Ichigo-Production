@@ -49,7 +49,7 @@ public class ListController {
             if (checks.get(i) == 1) {
                 Bought bought = new Bought();
                 Date now = new Date();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
                 String str = sdf.format(now);
                 bought.setCreateTime(str);
                 bought.setGoodsname(goodsNames.get(i));
