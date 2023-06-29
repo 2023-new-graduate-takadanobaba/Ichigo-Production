@@ -16,6 +16,12 @@ function viewChange(){
             document.getElementById('travelBox').style.display = "";
         }
     }
-
-window.onload = viewChange;
+    window.onload = viewChange;
 }
+    function total() {
+        prices = Array.from(document.querySelectorAll("td[id^=total]"));
+        result = prices.reduce(function (sum, element) {
+            return sum + element;
+        });
+        document.getElementById("aaaaaa").value = result; // 合計値を0にリセット
+    }
