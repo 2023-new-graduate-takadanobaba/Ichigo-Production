@@ -18,10 +18,23 @@ function viewChange(){
     }
     window.onload = viewChange;
 }
-    function total() {
-        prices = Array.from(document.querySelectorAll("td[id^=total]"));
-        result = prices.reduce(function (sum, element) {
-            return sum + element;
-        });
-        document.getElementById("aaaaaa").value = result; // 合計値を0にリセット
-    }
+
+    function calculateSum() {
+        var table = document.getElementById("myTable");  // テーブルの要素を取得
+        var rows = table.getElementsByTagName("tr");  // 行の要素を取得
+        var sum = 0;  // 合計の初期値
+  
+        // 各行の4列目の<td>要素から値を取得し、合計を計算する
+        for (var i = 0; i < rows.length; i++) {
+          var cells = rows[i].getElementsByTagName("td");  // 列の要素を取得
+  
+          if (cells.length >= 4) {
+            var value = parseFloat(cells[3].innerText);  // 4列目のテキスト内容を数値に変換
+            if (!isNaN(value)) {
+              sum += value;  // 数値の場合は合計に加算
+            }
+          }
+        }
+  
+        document.getElementById("result").value = sum;  // 結果を表示
+      }
