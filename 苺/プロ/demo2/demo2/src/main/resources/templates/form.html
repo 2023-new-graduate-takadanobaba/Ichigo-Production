@@ -19,10 +19,10 @@
     <th>合計</th>
     </tr>
     <tr th:each="bought: ${boughts}">
-        <td th:text="${bought.goodsname}"></td>
-        <td th:text="${bought.price}"></td>
-        <td th:text="${bought.amount}"></td>
-        <td th:text="${bought.total}" id="total"></td>
+        <td><input th:value="${bought.goodsname}"></td>
+        <td><input th:value="${bought.price}"></td>
+        <td><input th:value="${bought.amount}"></td>
+        <td><input th:value="${bought.total}" id="total"></td>
         <td><input type="hidden" th:value="${bought.id}"></td>
     </tr>
     </table>
