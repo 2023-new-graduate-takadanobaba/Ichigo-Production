@@ -26,6 +26,17 @@ public class Bought{
     @Column
     private Integer amount;
 
+    @Column
+    private Integer total;
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
     public int getId() {
         return id;
     }
