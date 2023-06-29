@@ -25,7 +25,7 @@ public class CalenderController {
     public String Form(@PathVariable String date, Model model) {
 
         model.addAttribute("boughts", repository.findByCreateTimeContaining(date));
-
+        
         return "form";
     }
 
