@@ -1,5 +1,6 @@
 package com.example.demo2;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -29,17 +30,10 @@ public class ListController {
 
     @GetMapping("/list")
     public String showItemList(Model model) {
- model.addAttribute("items", repository.findAll());
- 
+        model.addAttribute("items", repository.findAll());
 
-
-
-
-
-        
         return "list";
     }
-    
 
     @PostMapping("/regist")
     public String regist(@RequestParam("check") List<Integer> checks,
@@ -55,8 +49,9 @@ public class ListController {
             if (checks.get(i) == 1) {
                 Bought bought = new Bought();
                 Date now = new Date();
-                // kaimonoList.setId(i + 1);
-                bought.setCreateTime(now);
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                String str = sdf.format(now);
+                bought.setCreateTime(str);
                 bought.setGoodsname(goodsNames.get(i));
                 bought.setPrice(prices.get(i));
                 bought.setAmount(amounts.get(i));
@@ -66,7 +61,6 @@ public class ListController {
                 boughts = boughtRepository.saveAll(boughts);
             } else if (checks.get(i) == 0) {
                 KaimonoList kaimonoList = new KaimonoList();
-                // kaimonoList.setId(i + 1);
                 kaimonoList.setGoodsname(goodsNames.get(i));
                 kaimonoList.setPrice(prices.get(i));
                 kaimonoList.setAmount(amounts.get(i));
@@ -79,9 +73,10 @@ public class ListController {
 
         return "list";
     }
-@RequestMapping(path = "/gorori")
-public String delete (RegisterForm form){
-    repository.deleteById(form.getId());
-    return "redirect:/list";
-}
+
+    @RequestMapping(path = "/gorori")
+    public String delete(RegisterForm form) {
+        repository.deleteById(form.getId());
+        return "redirect:/list";
+    }
 }

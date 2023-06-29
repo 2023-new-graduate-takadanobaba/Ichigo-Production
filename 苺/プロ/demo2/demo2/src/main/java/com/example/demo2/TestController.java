@@ -40,34 +40,34 @@ public class TestController {
         return "calender";
     }
 
-    @PostMapping("/test/regist")
-    public String registTest(@RequestParam("check") List<Integer> checks,
-            @RequestParam("goodsname") List<String> goodsNames,
-            @RequestParam("price") List<Integer> prices,
-            @RequestParam("amount") List<Integer> amounts) {
+    // @PostMapping("/test/regist")
+    // public String registTest(@RequestParam("check") List<Integer> checks,
+    //         @RequestParam("goodsname") List<String> goodsNames,
+    //         @RequestParam("price") List<Integer> prices,
+    //         @RequestParam("amount") List<Integer> amounts) {
 
-        List<Bought> Listtoforms = new ArrayList<>();
+    //     List<Bought> Listtoforms = new ArrayList<>();
 
-        for (int i = 0; i < goodsNames.size(); i++) {
+    //     for (int i = 0; i < goodsNames.size(); i++) {
 
-            if (checks.get(i) == 1) {
-                Bought Listtoform = new Bought();
-                Date now = new Date();
-                // kaimonoList.setId(i + 1);
-                Listtoform.setCreateTime(now);
-                Listtoform.setGoodsname(goodsNames.get(i));
-                Listtoform.setPrice(prices.get(i));
-                Listtoform.setAmount(amounts.get(i));
+    //         if (checks.get(i) == 1) {
+    //             Bought Listtoform = new Bought();
+    //             Date now = new Date();
+    //             // kaimonoList.setId(i + 1);
+    //             Listtoform.setCreateTime(str);
+    //             Listtoform.setGoodsname(goodsNames.get(i));
+    //             Listtoform.setPrice(prices.get(i));
+    //             Listtoform.setAmount(amounts.get(i));
 
-                Listtoforms.add(Listtoform);
+    //             Listtoforms.add(Listtoform);
 
-                Listtoforms = ListtoformRepository.saveAll(Listtoforms);
-            }
-        }
+    //             Listtoforms = ListtoformRepository.saveAll(Listtoforms);
+    //         }
+    //     }
 
         
 
-        return "test";
-    }
+    //     return "test";
+    // }
 
 }
