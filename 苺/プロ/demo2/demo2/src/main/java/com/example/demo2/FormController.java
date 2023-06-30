@@ -48,14 +48,20 @@ public class FormController {
     }
 
     @PostMapping("/update")
+    //RequestParamの意味...HTML上の要素を取得する
     public String update(@RequestParam("goodsname") List<String> goodsNames,
             @RequestParam("price") List<Integer> prices,
             @RequestParam("amount") List<Integer> amounts,
             @RequestParam("id") List<Integer> ids){
-        Bought bought = new Bought();
-        for(){
-            
+            Bought bought = repository.getReferenceById(ids.get(0));
+        for(int i = 0; i < goodsNames.size();i++){
+            bought.setGoodsname(goodsNames.get(i));
+            bought.setPrice(prices.get(i));
+            bought.setAmount(amounts.get(i));
+            bought.setId(ids.get(i));
+            bought = repository.save(bought);
         }
-        return "/";
+        return "redirect:/form/"+bought.getCreateTime();
+
     }
 }
