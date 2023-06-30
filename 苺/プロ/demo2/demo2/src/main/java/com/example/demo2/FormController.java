@@ -33,14 +33,12 @@ public class FormController {
 
     // 行のデータの削除を行う
     @RequestMapping(path="/form-delate", method = RequestMethod.GET)
-    public String delateDataString(@PathVariable String date,Model model, Bought bought) {
-
-        model.addAttribute("boughts", repository.findByCreateTimeContaining(date));
-
+    public String delateDataString(Model model, int id) {
+        Bought bought = repository.getReferenceById(id);
         // データベースのデータを削除する
         delete(bought.getId());
 
         // Formの一覧画面にリダイレクト
-        return "form";
+        return "redirect:/form/"+bought.getCreateTime();
     }
 }
