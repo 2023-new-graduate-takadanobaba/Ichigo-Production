@@ -1,11 +1,15 @@
 package com.example.demo2;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo2.entity.Bought;
 import com.example.demo2.repository.BoughtRepository;
@@ -39,6 +43,24 @@ public class FormController {
         delete(bought.getId());
 
         // Formの一覧画面にリダイレクト
+        return "redirect:/form/"+bought.getCreateTime();
+
+    }
+
+    @PostMapping("/update")
+    //RequestParamの意味...HTML上の要素を取得する
+    public String update(@RequestParam("goodsname") List<String> goodsNames,
+            @RequestParam("price") List<Integer> prices,
+            @RequestParam("amount") List<Integer> amounts,
+            @RequestParam("id") List<Integer> ids){
+            Bought bought = repository.getReferenceById(ids.get(0));
+        for(int i = 0; i < goodsNames.size();i++){
+            bought.setGoodsname(goodsNames.get(i));
+            bought.setPrice(prices.get(i));
+            bought.setAmount(amounts.get(i));
+            bought.setId(ids.get(i));
+            bought = repository.save(bought);
+        }
         return "redirect:/form/"+bought.getCreateTime();
 
     }
