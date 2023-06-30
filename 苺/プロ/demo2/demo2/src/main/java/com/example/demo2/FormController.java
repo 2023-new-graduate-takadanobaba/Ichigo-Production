@@ -53,12 +53,14 @@ public class FormController {
             @RequestParam("price") List<Integer> prices,
             @RequestParam("amount") List<Integer> amounts,
             @RequestParam("id") List<Integer> ids){
-            Bought bought = repository.getReferenceById(ids.get(0));
+            Bought bought = new Bought();
         for(int i = 0; i < goodsNames.size();i++){
+            bought = repository.getReferenceById(ids.get(i));
             bought.setGoodsname(goodsNames.get(i));
             bought.setPrice(prices.get(i));
             bought.setAmount(amounts.get(i));
-            bought.setId(ids.get(i));
+            bought.setTotal(prices.get(i)*amounts.get(i));
+            // bought.setId(ids.get(i));
             bought = repository.save(bought);
         }
         return "redirect:/form/"+bought.getCreateTime();
