@@ -3,7 +3,6 @@ package com.example.demo2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,13 +32,15 @@ public class FormController {
     }
 
     // 行のデータの削除を行う
-    @GetMapping("/form-delate")
-    public String delateDataString(Model model, Bought bought) {
+    @RequestMapping(path="/form-delate", method = RequestMethod.GET)
+    public String delateDataString(@PathVariable String date,Model model, Bought bought) {
+
+        model.addAttribute("boughts", repository.findByCreateTimeContaining(date));
 
         // データベースのデータを削除する
         delete(bought.getId());
 
         // Formの一覧画面にリダイレクト
-        return "redirect:/";
+        return "form";
     }
 }
