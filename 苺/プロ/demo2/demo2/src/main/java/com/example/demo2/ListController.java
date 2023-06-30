@@ -82,13 +82,13 @@ public class ListController {
         return "redirect:/list";
     }
 
-
- public String formregist(int id) {
+    @GetMapping(path = "/kanryo")
+public String formregist(int id) {
  
 KaimonoList bou =repository.getReferenceById(id);
 Bought itemBean = new Bought();
- BeanUtils.copyProperties(bou,itemBean,"id");
-
+BeanUtils.copyProperties(bou,itemBean,"id");
+itemBean = boughtRepository.save(itemBean);
 
 
        
