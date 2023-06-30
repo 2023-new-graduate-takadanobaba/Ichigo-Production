@@ -40,6 +40,6 @@ public class FormController {
         delete(bought.getId());
 
         // Formの一覧画面にリダイレクト
-        return "redirect:/form";
+        return "redirect:/list";
     }
 }
