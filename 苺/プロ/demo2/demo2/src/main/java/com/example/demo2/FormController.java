@@ -1,11 +1,15 @@
 package com.example.demo2;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo2.entity.Bought;
 import com.example.demo2.repository.BoughtRepository;
@@ -44,7 +48,14 @@ public class FormController {
     }
 
     @PostMapping("/update")
-    public String update(){
-        
+    public String update(@RequestParam("goodsname") List<String> goodsNames,
+            @RequestParam("price") List<Integer> prices,
+            @RequestParam("amount") List<Integer> amounts,
+            @RequestParam("id") List<Integer> ids){
+        Bought bought = new Bought();
+        for(){
+            
+        }
+        return "/";
     }
 }
