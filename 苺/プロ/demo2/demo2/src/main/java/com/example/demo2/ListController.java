@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -79,4 +81,21 @@ public class ListController {
         repository.deleteById(form.getId());
         return "redirect:/list";
     }
+
+
+ public String formregist(int id) {
+ 
+KaimonoList bou =repository.getReferenceById(id);
+Bought itemBean = new Bought();
+ BeanUtils.copyProperties(bou,itemBean,"id");
+
+
+
+       
+        return "calender";
+
+    }
+
+
+
 }
