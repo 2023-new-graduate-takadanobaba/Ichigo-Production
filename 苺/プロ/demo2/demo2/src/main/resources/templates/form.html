@@ -22,11 +22,11 @@
                 <th>合計</th>
             </tr>
             <tr th:each="bought: ${boughts}">
-                <td><input type="text" th:value="${bought.goodsname}"></td>
-                <td><input type="number" th:value="${bought.price}"></td>
-                <td><input type="number" th:value="${bought.amount}"></td>
+                <td><input type="text" name="goodsname" th:value="${bought.goodsname}"></td>
+                <td><input type="number" name="price" th:value="${bought.price}"></td>
+                <td><input type="number" name="amount" th:value="${bought.amount}"></td>
                 <td><input type="number" th:value="${bought.total}" id="total" readonly></td>
-                <td><input type="hidden" th:value="${bought.id}"></td>
+                <td><input type="hidden" name="id" th:value="${bought.id}"></td>
                 <td><a th:href="@{/form-delate(id=${bought.id})}">削除</a></td>
             </tr>
         </table>
