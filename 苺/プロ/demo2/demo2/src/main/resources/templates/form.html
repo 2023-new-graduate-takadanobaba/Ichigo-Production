@@ -24,7 +24,7 @@
         <td><input th:value="${bought.amount}"></td>
         <td><input th:value="${bought.total}" id="total"></td>
         <td><input type="hidden" th:value="${bought.id}"></td>
-        <td><a th href="@{/book-delate(id=*{id})}">削除</a></td>
+        <td><a th href="@{/form-delate(id=*{id})}">削除</a></td>
     </tr>
     </table>
     <input type="number" id="result" name="total" readonly value="0">円
