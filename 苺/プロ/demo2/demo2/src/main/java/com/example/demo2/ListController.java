@@ -87,10 +87,6 @@ public class ListController {
 
         for (int i = 0; i < abc.size(); i++) {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 245b9222becf2528ac00100e2d529edde49c4122
             KaimonoList bou = repository.getReferenceById(abc.get(i));
             Bought itemBean = new Bought();
             BeanUtils.copyProperties(bou, itemBean, "id");
@@ -98,12 +94,9 @@ public class ListController {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
             String str = sdf.format(now);
             itemBean.setCreateTime(str);
-<<<<<<< HEAD
-=======
 itemBean.setTotal(itemBean.getPrice()*itemBean.getAmount());
 itemBean = boughtRepository.save(itemBean);
 
->>>>>>> 245b9222becf2528ac00100e2d529edde49c4122
 
 
         }
