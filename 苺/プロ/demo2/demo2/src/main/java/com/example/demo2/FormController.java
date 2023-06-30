@@ -59,6 +59,7 @@ public class FormController {
             bought.setGoodsname(goodsNames.get(i));
             bought.setPrice(prices.get(i));
             bought.setAmount(amounts.get(i));
+            bought.setTotal(prices.get(i)*amounts.get(i));
             // bought.setId(ids.get(i));
             bought = repository.save(bought);
         }
