@@ -42,4 +42,9 @@ public class FormController {
         return "redirect:/form/"+bought.getCreateTime();
 
     }
+
+    @PostMapping("/update")
+    public String update(){
+        
+    }
 }
