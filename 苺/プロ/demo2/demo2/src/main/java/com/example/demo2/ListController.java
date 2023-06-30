@@ -73,7 +73,7 @@ public class ListController {
 
         }
 
-        return "list";
+         return "redirect:/list";
     }
 
     @RequestMapping(path = "/gorori")
@@ -95,6 +95,7 @@ BeanUtils.copyProperties(bou,itemBean,"id");
                 String str = sdf.format(now);
                 itemBean.setCreateTime(str);
 
+itemBean.setTotal(itemBean.getPrice()*itemBean.getAmount());
 itemBean = boughtRepository.save(itemBean);
 
 
