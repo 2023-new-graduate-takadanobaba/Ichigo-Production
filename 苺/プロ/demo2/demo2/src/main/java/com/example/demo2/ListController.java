@@ -57,7 +57,7 @@ public class ListController {
                 bought.setGoodsname(goodsNames.get(i));
                 bought.setPrice(prices.get(i));
                 bought.setAmount(amounts.get(i));
-                bought.setTotal(prices.get(i)*amounts.get(i));
+                bought.setTotal(prices.get(i) * amounts.get(i));
                 boughts.add(bought);
 
                 boughts = boughtRepository.saveAll(boughts);
@@ -83,27 +83,23 @@ public class ListController {
     }
 
     @PostMapping(path = "/kanryo")
-public String formregist(@RequestParam("check") List <Integer> abc ){
- 
-for (int i = 0; i < abc.size(); i++) {
+    public String formregist(@RequestParam("check") List<Integer> abc) {
 
-KaimonoList bou =repository.getReferenceById(abc.get(i));
-Bought itemBean = new Bought();
-BeanUtils.copyProperties(bou,itemBean,"id");
- Date now = new Date();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
-                String str = sdf.format(now);
-                itemBean.setCreateTime(str);
+        for (int i = 0; i < abc.size(); i++) {
 
-itemBean = boughtRepository.save(itemBean);
+            KaimonoList bou = repository.getReferenceById(abc.get(i));
+            Bought itemBean = new Bought();
+            BeanUtils.copyProperties(bou, itemBean, "id");
+            Date now = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
+            String str = sdf.format(now);
+            itemBean.setCreateTime(str);
 
+            itemBean = boughtRepository.save(itemBean);
 
-       
-       
+        }
+
+        return "calender";
 
     }
-
- return "calender";
-
-}
 }
