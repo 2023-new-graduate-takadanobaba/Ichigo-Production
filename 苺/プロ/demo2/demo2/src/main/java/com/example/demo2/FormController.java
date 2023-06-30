@@ -1,5 +1,7 @@
 package com.example.demo2;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,34 +38,50 @@ public class FormController {
     }
 
     // 行のデータの削除を行う
-    @RequestMapping(path="/form-delate", method = RequestMethod.GET)
+    @RequestMapping(path = "/form-delate", method = RequestMethod.GET)
     public String delateDataString(Model model, int id) {
         Bought bought = repository.getReferenceById(id);
         // データベースのデータを削除する
         delete(bought.getId());
 
         // Formの一覧画面にリダイレクト
-        return "redirect:/form/"+bought.getCreateTime();
+        return "redirect:/form/" + bought.getCreateTime();
 
     }
 
     @PostMapping("/update")
-    //RequestParamの意味...HTML上の要素を取得する
+    // RequestParamの意味...HTML上の要素を取得する
     public String update(@RequestParam("goodsname") List<String> goodsNames,
             @RequestParam("price") List<Integer> prices,
             @RequestParam("amount") List<Integer> amounts,
-            @RequestParam("id") List<Integer> ids){
-            Bought bought = new Bought();
-        for(int i = 0; i < goodsNames.size();i++){
+            @RequestParam("id") List<Integer> ids) {
+        Bought bought = new Bought();
+        for (int i = 0; i < goodsNames.size(); i++) {
             bought = repository.getReferenceById(ids.get(i));
             bought.setGoodsname(goodsNames.get(i));
             bought.setPrice(prices.get(i));
             bought.setAmount(amounts.get(i));
-            bought.setTotal(prices.get(i)*amounts.get(i));
+            bought.setTotal(prices.get(i) * amounts.get(i));
             // bought.setId(ids.get(i));
             bought = repository.save(bought);
         }
-        return "redirect:/form/"+bought.getCreateTime();
+        return "redirect:/form/" + bought.getCreateTime();
+    }
 
+    @PostMapping("/addgoods")
+    public String addgoods(@RequestParam("goodsname") String goodsNames,
+            @RequestParam("price") int prices,
+            @RequestParam("amount") int amounts) {
+        Bought bought = new Bought();
+        Date now = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
+        String str = sdf.format(now);
+        bought.setCreateTime(str);
+        bought.setGoodsname(goodsNames);
+        bought.setPrice(prices);
+        bought.setAmount(amounts);
+        bought.setTotal(prices * amounts);
+        bought = repository.save(bought);
+        return "redirect:/form/" + bought.getCreateTime();
     }
 }
