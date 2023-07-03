@@ -73,7 +73,7 @@ public class ListController {
 
         }
 
-         return "redirect:/list";
+        return "redirect:/list";
     }
 
     @RequestMapping(path = "/gorori")
@@ -86,18 +86,17 @@ public class ListController {
     public String formregist(@RequestParam("check") List<Integer> abc) {
 
         for (int i = 0; i < abc.size(); i++) {
-
-            KaimonoList bou = repository.getReferenceById(abc.get(i));
-            Bought itemBean = new Bought();
-            BeanUtils.copyProperties(bou, itemBean, "id");
-            Date now = new Date();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
-            String str = sdf.format(now);
-            itemBean.setCreateTime(str);
-itemBean.setTotal(itemBean.getPrice()*itemBean.getAmount());
-itemBean = boughtRepository.save(itemBean);
-
-
+            if (abc.get(i) != 0) {
+                KaimonoList bou = repository.getReferenceById(abc.get(i));
+                Bought itemBean = new Bought();
+                BeanUtils.copyProperties(bou, itemBean, "id");
+                Date now = new Date();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
+                String str = sdf.format(now);
+                itemBean.setCreateTime(str);
+                itemBean.setTotal(itemBean.getPrice() * itemBean.getAmount());
+                itemBean = boughtRepository.save(itemBean);
+            }
 
         }
 
