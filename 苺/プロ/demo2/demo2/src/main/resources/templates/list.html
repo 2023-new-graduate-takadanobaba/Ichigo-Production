@@ -64,7 +64,7 @@
     <form>
     <tr th:each="item: ${items}">
         <td>
-            <input type="checkbox"name="check" th:value="${item.id}">
+            <input type="checkbox"name="check" th:value="${item.id}"><input name="check" type="hidden" value="0">
         </td>
     <td th:text="${item.id}"></td>
     <td th:text="${item.goodsname}"></td>
