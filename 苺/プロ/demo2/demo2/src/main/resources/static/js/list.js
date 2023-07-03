@@ -53,14 +53,20 @@ function addForm() {
 
         //checkbox列を追加
         var checkCell = document.createElement("th");
-        var checkInput = document.createElement("input");
-        checkInput.type = "checkbox";
-        checkInput.name = "check";
-        checkInput.id = "check_" + (i + 2);
-        checkCell.appendChild(checkInput);
+        //var checkInput = document.createElement("input");
+        // checkInput.type = "checkbox";
+        // checkInput.name = "check";
+        // checkInput.id = "check_" + (i + 2);
+        // checkCell.appendChild(checkInput);
+        // newRow.appendChild(checkCell);
+
+        //KaimonoListのDBへ登録するための値
+        var hiddenCell = document.createElement("input");
+        hiddenCell.type = "hidden";
+        hiddenCell.name = "check";
+        hiddenCell.value = "0";
+        checkCell.appendChild(hiddenCell);
         newRow.appendChild(checkCell);
-
-
 
         // 商品名列を追加
 
