@@ -36,8 +36,10 @@
     </form>
     総合計:<input type="number" id="result" name="total" readonly value="0">円
 
-    <form method="post" th:action="@{/addgoods}">]
-        <table>
+    <form method="post" th:action="@{/addgoods}">
+        <div class="table-responsive">
+        <table class="table text-nowrap">
+        
             <tr>
                 <th>商品名</th>
                 <th>価格</th>
@@ -52,6 +54,8 @@
                 <td><input type="hidden" name="id"></td>
             </tr>
         </table>
+        </div>
+
         <input type="submit" value="追加登録">
     </form>
     <form method="post" th:action="@{/}">
