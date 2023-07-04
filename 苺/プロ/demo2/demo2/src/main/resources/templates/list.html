@@ -24,9 +24,26 @@
             </tr>
         </thead>
         <tbody>
+            <tr th:each="item: ${items}">
+                <!-- <td>
+                    <input type="checkbox"name="check" th:value="${item.id}"><input name="check" type="hidden" value="0">
+                </td> -->
+                    <th><input type="checkbox"name="check"value="1"><input name="check" type="hidden" value="0"><input id="text" th:value="${item.goodsname}" type="text" name="goodsname" value="" placeholder="商品名"></th>
+                    <td>
+                        <input type="number" th:value="${item.price}"id="tanka_001" name="price" onchange="reCalc();">円
+                    </td>
+                    <td>
+                        <input type="number" th:value="${item.amount}"id="suryo_001" name="amount" value="1" onchange="reCalc();">個
+                    </td>
+                    <td>
+                        <input type="number" id="yokokei_001" name="yokokei_001">円
+                    </td>
+                    <td>
+                        <button type="button" onclick="deleteForm(this)" id="button_001" class="btn btn-outline-danger">削除</button>       
+                    </td>
+                </tr>
             <tr>
-
-                <th><!--<input type="checkbox"name="check"value="1">--><input name="check" type="hidden" value="0"><input id="text" type="text" name="goodsname" value="" placeholder="商品名"></th>
+                <th><input type="checkbox"name="check"value="1"><input name="check" type="hidden" value="0"><input id="text" type="text" name="goodsname" value="" placeholder="商品名"></th>
                 <td>
                     <input type="number" id="tanka_001" name="price" onchange="reCalc();">円
                 </td>
@@ -62,15 +79,7 @@
     <th>数量</th>
     </tr>
     <form>
-    <tr th:each="item: ${items}">
-        <td>
-            <input type="checkbox"name="check" th:value="${item.id}"><input name="check" type="hidden" value="0">
-        </td>
-    <td th:text="${item.id}"></td>
-    <td th:text="${item.goodsname}"></td>
-    <td th:text="${item.price}"></td>
-    <td th:text="${item.amount}"></td>
-    </tr>
+  
     <input type="submit" value="完了">
     </table>
 
