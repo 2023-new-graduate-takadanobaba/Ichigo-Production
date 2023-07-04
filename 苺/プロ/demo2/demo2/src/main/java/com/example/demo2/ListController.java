@@ -39,6 +39,7 @@ public class ListController {
 
     @PostMapping("/regist")
     public String regist(@RequestParam("check") List<Integer> checks,
+            @RequestParam("id")List<Integer>ids,
             @RequestParam("goodsname") List<String> goodsNames,
             @RequestParam("price") List<Integer> prices,
             @RequestParam("amount") List<Integer> amounts) {
@@ -48,7 +49,7 @@ public class ListController {
 
         for (int i = 0; i < goodsNames.size(); i++) {
 
-            if (checks.get(i) == 1) {
+            if (checks.get(i) == 1 ) {
                 Bought bought = new Bought();
                 Date now = new Date();
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
@@ -59,8 +60,11 @@ public class ListController {
                 bought.setAmount(amounts.get(i));
                 bought.setTotal(prices.get(i) * amounts.get(i));
                 boughts.add(bought);
-
                 boughts = boughtRepository.saveAll(boughts);
+                if(ids.get(i) !=0);{
+                    
+                }
+            
             } else if (checks.get(i) == 0) {
                 KaimonoList kaimonoList = new KaimonoList();
                 kaimonoList.setGoodsname(goodsNames.get(i));
