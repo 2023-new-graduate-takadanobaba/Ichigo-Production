@@ -59,6 +59,7 @@ function addForm() {
         checkInput.id = "check_" + (i + 2);
         checkCell.appendChild(checkInput);
         newRow.appendChild(checkCell);
+    
 
         //KaimonoListのDBへ登録するための値
         var hiddenCell = document.createElement("input");
@@ -75,6 +76,13 @@ function addForm() {
         nameInput.name = "goodsname";
         nameInput.placeholder = "商品名";
         checkCell.appendChild(nameInput);
+
+        //id列を追加
+        var idInput = document.createElement("input");
+        idInput.type = "hidden";
+        idInput.name = "id";
+        idInput.value = "0";
+        newRow.appendChild(idInput);
 
 
         // 単価列を追加
