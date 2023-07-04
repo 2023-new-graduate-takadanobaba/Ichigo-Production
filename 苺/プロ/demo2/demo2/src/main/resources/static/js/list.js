@@ -53,12 +53,12 @@ function addForm() {
 
         //checkbox列を追加
         var checkCell = document.createElement("th");
-        //var checkInput = document.createElement("input");
-        // checkInput.type = "checkbox";
-        // checkInput.name = "check";
-        // checkInput.id = "check_" + (i + 2);
-        // checkCell.appendChild(checkInput);
-        // newRow.appendChild(checkCell);
+        var checkInput = document.createElement("input");
+        checkInput.type = "checkbox";
+        checkInput.name = "check";
+        checkInput.id = "check_" + (i + 2);
+        checkCell.appendChild(checkInput);
+        newRow.appendChild(checkCell);
 
         //KaimonoListのDBへ登録するための値
         var hiddenCell = document.createElement("input");
