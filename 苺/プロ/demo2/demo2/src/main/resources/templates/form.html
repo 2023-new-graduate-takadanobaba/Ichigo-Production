@@ -14,7 +14,12 @@
     <h1 th:text="${listtoForms}"></h1>
     <div>購入商品一覧</div>
     <form method="post" th:action="@{/update}">
-        <table id="myTable">
+        <div class="container-sm">
+<div class="container-md">
+<div class="container-lg">
+<div class="container-xl">
+<div class="container-xxl">
+        <table id="myTable" class="table text-nowrap">
             <tr>
                 <th>商品名</th>
                 <th>価格</th>
@@ -30,12 +35,16 @@
                 <td><a th:href="@{/form-delate(id=${bought.id})}">削除</a></td>
             </tr>
         </table>
+</div></div></div></div></div>
+        </div>
         <input type="submit" value="更新" />
     </form>
     総合計:<input type="number" id="result" name="total" readonly value="0">円
 
     <form method="post" th:action="@{/addgoods}">
-        <table>
+        <div class="container-lg">
+        <table class="table text-nowrap">
+        
             <tr>
                 <th>商品名</th>
                 <th>価格</th>
@@ -50,6 +59,8 @@
                 <td><input type="hidden" name="id"></td>
             </tr>
         </table>
+        </div>
+
         <input type="submit" value="追加登録">
     </form>
     <form method="post" th:action="@{/}">
