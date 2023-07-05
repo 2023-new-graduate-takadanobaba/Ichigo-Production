@@ -22,10 +22,10 @@
         <table id="myTable" class="table text-nowrap">
             <div class="bg-primary">
             <tr>
-                <th><span class="p-3 mb-2 bg-secondary text-white">商品名</span></th>
-                <th><span class="p-3 mb-2 bg-secondary text-white">価格</span></th>
-                <th><span class="p-3 mb-2 bg-secondary text-white">数量</span></th>
-                <th><span class="p-3 mb-2 bg-secondary text-white">合計</span></th>
+                <th><span class="p-1 mb-1 bg-secondary text-white">商品名</span></th>
+                <th><span class="p-1 mb-1 bg-secondary text-white">価格</span></th>
+                <th><span class="p-1 mb-1 bg-secondary text-white">数量</span></th>
+                <th><span class="p-1 mb-1 bg-secondary text-white">合計</span></th>
             </tr>
             </div>
             <tr th:each="bought: ${boughts}">
@@ -38,17 +38,19 @@
             </tr>
         </table>
         </div>
-        総合計:<input type="number" id="result" name="total" readonly value="0" class="form-control little-short-button">円
+        <span class="p-1 mb-1 bg-secondary text-white">総合計:</span>
+        <input type="number" id="result" name="total" readonly value="0" class="form-control little-short-button">
+        <span class="p-1 mb-1 bg-secondary text-white">円</span>
         <input type="submit" value="更新" class="form-control short-button">
     </form>
 
     <form method="post" th:action="@{/addgoods}">]
         <table>
             <tr>
-                <th><span class="p-3 mb-2 bg-secondary text-white">商品名</span></th>
-                <th><span class="p-3 mb-2 bg-secondary text-white">価格</span></th>
-                <th><span class="p-3 mb-2 bg-secondary text-white">数量</span></th>
-                <th><span class="p-3 mb-2 bg-secondary text-white">合計</span></th>
+                <th><span class="p-1 mb-1 bg-secondary text-white">商品名</span></th>
+                <th><span class="p-1 mb-1 bg-secondary text-white">価格</span></th>
+                <th><span class="p-1 mb-1 bg-secondary text-white">数量</span></th>
+                <th><span class="p-1 mb-1 bg-secondary text-white">合計</span></th>
             </tr>
             <tr>
                 <td><input type="text" name="goodsname" class="form-control"></td>
