@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo2.entity.Bought;
@@ -112,5 +113,24 @@ public class ListController {
 
         return "calender";
 
+    }
+
+        // 行のデータの削除を行う
+    @RequestMapping(path = "/item-delete", method = RequestMethod.GET)
+    public String delateListItem(int id) {
+        KaimonoList kaimonoList = repository.getReferenceById(id);
+        // データベースのデータを削除する
+        delete(kaimonoList.getId());
+
+        // Formの一覧画面にリダイレクト
+        return "redirect:/list";
+
+    }
+
+        // formのデータを削除する
+    public void delete(Integer id) {
+
+        // idを指定して、データベースからデータを削除する
+        repository.deleteById(id);
     }
 }
