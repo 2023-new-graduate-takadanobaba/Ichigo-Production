@@ -31,6 +31,7 @@ th {
     color: #000;
 }
 th, td {
+    background-color: rgba(252, 248, 213,0.5);
     outline: 2px solid #ddd;
     padding-top: 10px;
     padding-bottom: 10px;
