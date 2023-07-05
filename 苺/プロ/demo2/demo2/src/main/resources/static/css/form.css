@@ -2,3 +2,7 @@
 body {
     background-image: url("/ichigo/smartphone_gorogoro_man.png");
  }
+
+ input.short-button{
+    width: 30%;
+ }
