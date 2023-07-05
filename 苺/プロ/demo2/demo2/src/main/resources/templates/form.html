@@ -12,12 +12,12 @@
 </head>
 
 <body onload="calculateSum();" class="bg-primary-subtle text-white">
-    
+
     <h1 th:text="${listtoForms}"></h1>
-    <div><span class="p-3 mb-2 bg-secondary text-white">購入商品一覧</span></div>
+    <div><span class="bg-secondary text-white">購入商品一覧</span></div>
     <form method="post" th:action="@{/update}">
 
-        <div class="container text-center p-3 mb-2 bg-secondary text-white">
+        <div class="container text-center bg-secondary text-white">
 
         <table id="myTable" class="table text-nowrap">
             <div class="bg-primary">
