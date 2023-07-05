@@ -56,6 +56,7 @@ function addForm() {
         var checkInput = document.createElement("input");
         checkInput.type = "checkbox";
         checkInput.name = "check";
+        checkInput.value = "1";
         checkInput.id = "check_" + (i + 2);
         checkCell.appendChild(checkInput);
         newRow.appendChild(checkCell);
@@ -153,4 +154,9 @@ function deleteForm(button) {
     reCalc();
 
     
+}
+
+
+function changeCheckParameter(check){
+    alert(check);
 }
