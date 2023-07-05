@@ -38,7 +38,7 @@ public class FormController {
     }
 
     // 行のデータの削除を行う
-    @RequestMapping(path = "/form-delate", method = RequestMethod.GET)
+    @RequestMapping(path = "/form-delete", method = RequestMethod.GET)
     public String delateDataString(Model model, int id) {
         Bought bought = repository.getReferenceById(id);
         // データベースのデータを削除する

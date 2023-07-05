@@ -64,7 +64,7 @@ function addForm() {
 
         //KaimonoListのDBへ登録するための値
         var hiddenCell = document.createElement("input");
-        hiddenCell.type = "text";
+        hiddenCell.type = "hidden";
         hiddenCell.name = "check";
         hiddenCell.value = "0";
         hiddenCell.id = "check";
@@ -81,10 +81,10 @@ function addForm() {
 
         //id列を追加
         var idInput = document.createElement("input");
-        idInput.type = "text";
+        idInput.type = "hidden";
         idInput.name = "id";
         idInput.value = "0";
-        newRow.appendChild(idInput);
+        checkCell.appendChild(idInput);
 
 
         // 単価列を追加
@@ -93,6 +93,7 @@ function addForm() {
         priceInput.type = "number";
         priceInput.name = "price";
         priceInput.id = "tanka_" + (i + 2); // ユニークなIDを設定
+        priceInput.value = "0";
         priceInput.onchange = reCalc;
         priceCell.appendChild(priceInput);
         priceCell.appendChild(document.createTextNode("円"));

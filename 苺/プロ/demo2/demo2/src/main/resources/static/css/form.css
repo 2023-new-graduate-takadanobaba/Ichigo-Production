@@ -5,6 +5,9 @@ body {
  }
 
  input.short-button{
-    width: 30%;
+    width: 10%;
+ }
 
+ input.little-short-button{
+    width: 15%;
  }

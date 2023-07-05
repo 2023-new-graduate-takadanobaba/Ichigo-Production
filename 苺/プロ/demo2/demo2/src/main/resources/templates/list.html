@@ -30,8 +30,8 @@
         <tbody id="formContainer">
             <tr th:each="item: ${items}">
            
-                    <th><input type="checkbox" onclick="changeCheckParameter(this)"><input id="check" name="check" type="text" value="0"><input id="text" th:value="${item.goodsname}" type="text" name="goodsname" value="" placeholder="商品名">
-                        <input type="text" name="id" th:value="${item.id}">
+                    <th><input type="checkbox" onclick="changeCheckParameter(this)"><input id="check" name="check" type="hidden" value="0"><input id="text" th:value="${item.goodsname}" type="text" name="goodsname" value="" placeholder="商品名">
+                        <input type="hidden" name="id" th:value="${item.id}">
                     </th>
                     <td>
                         <input type="number" th:value="${item.price}"id="tanka_001" name="price" onchange="reCalc();">円
@@ -43,15 +43,16 @@
                         <input type="number" id="yokokei_001" name="yokokei_001">円
                     </td>
                     <td>
-                        <button type="button" onclick="deleteForm(this)" id="button_001" class="btn btn-outline-danger">削除</button>       
+                        <!-- <button type="button" onclick="deleteForm(this)" id="button_001" class="btn btn-outline-danger">削除</button>        -->
+                        <a th:href="@{/item-delete(id=${item.id})}" class="form-control text-decoration-none">削除</a>
                     </td>
                 </tr>
             <tr>
-                <th><input type="checkbox" onclick="changeCheckParameter(this)"><input id="check" name="check" type="text" value="0"><input id="text" type="text" name="goodsname" value="" placeholder="商品名">
-                    <input type="text"name="id" value="0">
+                <th><input type="checkbox" onclick="changeCheckParameter(this)"><input id="check" name="check" type="hidden" value="0"><input id="text" type="text" name="goodsname" value="" placeholder="商品名">
+                    <input type="hidden"name="id" value="0">
                 </th>           
                 <td>
-                    <input type="number" id="tanka_001" name="price" onchange="reCalc();">円
+                    <input type="number" id="tanka_001" name="price" onchange="reCalc();" value="0">円
                 </td>
                 <td>
                     <input type="number" id="suryo_001" name="amount" value="1" onchange="reCalc();">個
