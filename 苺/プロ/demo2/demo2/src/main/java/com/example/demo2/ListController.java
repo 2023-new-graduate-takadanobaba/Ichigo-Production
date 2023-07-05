@@ -65,16 +65,22 @@ public class ListController {
                 repository.deleteById(ids.get(i));
                 }
             
-            } else if (checks.get(i) == 0) {
+            } else if (checks.get(i) == 0 && ids.get(i)==0) {
                 KaimonoList kaimonoList = new KaimonoList();
                 kaimonoList.setGoodsname(goodsNames.get(i));
                 kaimonoList.setPrice(prices.get(i));
                 kaimonoList.setAmount(amounts.get(i));
-
                 kaimonoLists.add(kaimonoList);
                 kaimonoLists = repository.saveAll(kaimonoLists);
+            }else {
+                KaimonoList kaimonoList = repository.getReferenceById(ids.get(i));
+                kaimonoList.setGoodsname(goodsNames.get(i));
+                kaimonoList.setPrice(prices.get(i));
+                kaimonoList.setAmount(amounts.get(i));
+                BeanUtils.copyProperties(kaimonoList, kaimonoList, "id");
+                kaimonoList = repository.save(kaimonoList);
             }
-
+            
         }
 
         return "redirect:/list";
