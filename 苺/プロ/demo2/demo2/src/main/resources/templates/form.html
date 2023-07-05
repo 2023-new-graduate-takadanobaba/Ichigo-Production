@@ -2,26 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <meta charset="UTF-8">
     <script th:src="@{/js/form.js}" type="text/javascript"></script>
 
     <title>Insert title here</title>
+    
 </head>
 
-<body onload="calculateSum();">
+<body onload="calculateSum();" class="bg-primary-subtle bg-gradient text-white">
+    
     <h1 th:text="${listtoForms}"></h1>
-    <div>購入商品一覧</div>
+    <div><span class="p-3 mb-2 bg-secondary text-white">購入商品一覧</span></div>
     <form method="post" th:action="@{/update}">
-        <div class="container text-center">
+        <div class="container text-center p-3 mb-2 bg-secondary text-white">
         <table id="myTable" class="table text-nowrap">
+            <div class="bg-primary">
             <tr>
                 <th>商品名</th>
                 <th>価格</th>
                 <th>数量</th>
                 <th>合計</th>
             </tr>
+            </div>
             <tr th:each="bought: ${boughts}">
                 <td><input type="text" name="goodsname" th:value="${bought.goodsname}" class="form-control"></td>
                 <td><input type="number" name="price" th:value="${bought.price}"class="form-control"></td>
@@ -60,6 +63,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+        </style>
 </body>
 
 </html>
