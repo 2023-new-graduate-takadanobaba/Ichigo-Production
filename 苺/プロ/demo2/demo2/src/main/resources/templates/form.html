@@ -14,18 +14,18 @@
 <body onload="calculateSum();" class="bg-primary-subtle text-white">
 
     <h1 th:text="${listtoForms}"></h1>
-    <div><span class="bg-secondary text-white">購入商品一覧</span></div>
-    <form method="post" th:action="@{/update}">
+    <div><span class="bg-info text-white rounded-pill">購入商品一覧</span></div>
+    <form method="post" th:action="@{/update}"> 
 
         <div class="container text-center">
 
         <table id="myTable" class="table text-nowrap">
             <div class="bg-primary">
             <tr>
-                <th><span class="p-1 mb-1 bg-secondary text-white rounded-pill">商品名</span></th>
-                <th><span class="p-1 mb-1 bg-secondary text-white rounded-pill">価格</span></th>
-                <th><span class="p-1 mb-1 bg-secondary text-white rounded-pill">数量</span></th>
-                <th><span class="p-1 mb-1 bg-secondary text-white rounded-pill">合計</span></th>
+                <th><span class="p-1 mb-1 bg-info text-white rounded-pill">商品名</span></th>
+                <th><span class="p-1 mb-1 bg-info text-white rounded-pill">価格</span></th>
+                <th><span class="p-1 mb-1 bg-info text-white rounded-pill">数量</span></th>
+                <th><span class="p-1 mb-1 bg-info text-white rounded-pill">合計</span></th>
             </tr>
             </div>
             <tr th:each="bought: ${boughts}">
@@ -38,19 +38,19 @@
             </tr>
         </table>
         </div>
-        <span class="p-1 mb-1 bg-secondary text-white rounded-pill">総合計:</span>
+        <span class="p-1 mb-1 bg-info text-white rounded-pill">総合計:</span>
         <input type="number" id="result" name="total" readonly value="0" class="form-control little-short-button">
-        <span class="p-1 mb-1 bg-secondary text-white rounded-pill">円</span>
+        <span class="p-1 mb-1 bg-info text-white rounded-pill">円</span>
         <input type="submit" value="更新" class="form-control short-button">
     </form>
     <div class="container text-center">
     <form method="post" th:action="@{/addgoods}">]
         <table>
             <tr>
-                <th><span class="p-1 mb-1 bg-secondary text-white rounded-pill">商品名</span></th>
-                <th><span class="p-1 mb-1 bg-secondary text-white rounded-pill">価格</span></th>
-                <th><span class="p-1 mb-1 bg-secondary text-white rounded-pill">数量</span></th>
-                <th><span class="p-1 mb-1 bg-secondary text-white rounded-pill">合計</span></th>
+                <th><span class="p-1 mb-1 bg-info text-white rounded-pill">商品名</span></th>
+                <th><span class="p-1 mb-1 bg-info text-white rounded-pill">価格</span></th>
+                <th><span class="p-1 mb-1 bg-info text-white rounded-pill">数量</span></th>
+                <th><span class="p-1 mb-1 bg-info text-white rounded-pill">合計</span></th>
             </tr>
             <tr>
                 <td><input type="text" name="goodsname" class="form-control"></td>
