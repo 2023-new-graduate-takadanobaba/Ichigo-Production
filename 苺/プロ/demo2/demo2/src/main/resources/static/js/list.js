@@ -55,9 +55,10 @@ function addForm() {
         var checkCell = document.createElement("th");
         var checkInput = document.createElement("input");
         checkInput.type = "checkbox";
-        checkInput.name = "check";
-        checkInput.value = "1";
         checkInput.id = "check_" + (i + 2);
+        checkInput.onclick = function () {
+            changeCheckParameter(this);
+        };
         checkCell.appendChild(checkInput);
         newRow.appendChild(checkCell);
     
@@ -67,6 +68,7 @@ function addForm() {
         hiddenCell.type = "hidden";
         hiddenCell.name = "check";
         hiddenCell.value = "0";
+        hiddenCell.id = "check";
         checkCell.appendChild(hiddenCell);
         newRow.appendChild(checkCell);
 
@@ -158,5 +160,11 @@ function deleteForm(button) {
 
 
 function changeCheckParameter(check){
-    alert(check);
+    var cell = check.parentElement;
+    var checkParameter = cell.querySelector("input[id=check]").value;
+    if(checkParameter == 0){
+        cell.querySelector("input[id^=check]").value="1"
+    } else {
+        cell.querySelector("input[id^=check]").value="0"
+    }
 }
