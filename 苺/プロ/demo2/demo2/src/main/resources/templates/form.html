@@ -14,11 +14,7 @@
     <h1 th:text="${listtoForms}"></h1>
     <div>購入商品一覧</div>
     <form method="post" th:action="@{/update}">
-        <div class="container-sm">
-<div class="container-md">
-<div class="container-lg">
-<div class="container-xl">
-<div class="container-xxl">
+        <div class="container text-center">
         <table id="myTable" class="table text-nowrap">
             <tr>
                 <th>商品名</th>
@@ -27,24 +23,21 @@
                 <th>合計</th>
             </tr>
             <tr th:each="bought: ${boughts}">
-                <td><input type="text" name="goodsname" th:value="${bought.goodsname}"></td>
-                <td><input type="number" name="price" th:value="${bought.price}"></td>
-                <td><input type="number" name="amount" th:value="${bought.amount}"></td>
-                <td><input type="number" th:value="${bought.total}" id="total" readonly></td>
-                <td><input type="hidden" name="id" th:value="${bought.id}"></td>
-                <td><a th:href="@{/form-delate(id=${bought.id})}">削除</a></td>
+                <td><input type="text" name="goodsname" th:value="${bought.goodsname}" class="form-control"></td>
+                <td><input type="number" name="price" th:value="${bought.price}"class="form-control"></td>
+                <td><input type="number" name="amount" th:value="${bought.amount}"class="form-control"></td>
+                <td><input type="number" th:value="${bought.total}" id="total" readonly class="form-control"></td>
+                <td><input type="hidden" name="id" th:value="${bought.id}" class="form-control"></td>
+                <td><a th:href="@{/form-delate(id=${bought.id})}" class="form-control">削除</a></td>
             </tr>
         </table>
-</div></div></div></div></div>
         </div>
         <input type="submit" value="更新" />
     </form>
     総合計:<input type="number" id="result" name="total" readonly value="0">円
 
-    <form method="post" th:action="@{/addgoods}">
-        <div class="container-lg">
-        <table class="table text-nowrap">
-        
+    <form method="post" th:action="@{/addgoods}">]
+        <table>
             <tr>
                 <th>商品名</th>
                 <th>価格</th>
@@ -59,8 +52,6 @@
                 <td><input type="hidden" name="id"></td>
             </tr>
         </table>
-        </div>
-
         <input type="submit" value="追加登録">
     </form>
     <form method="post" th:action="@{/}">
