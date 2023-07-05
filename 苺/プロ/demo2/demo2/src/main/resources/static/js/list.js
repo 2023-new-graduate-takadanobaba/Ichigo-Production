@@ -84,7 +84,7 @@ function addForm() {
         idInput.type = "text";
         idInput.name = "id";
         idInput.value = "0";
-        newRow.appendChild(idInput);
+        checkCell.appendChild(idInput);
 
 
         // 単価列を追加
@@ -93,6 +93,7 @@ function addForm() {
         priceInput.type = "number";
         priceInput.name = "price";
         priceInput.id = "tanka_" + (i + 2); // ユニークなIDを設定
+        priceInput.value = "0";
         priceInput.onchange = reCalc;
         priceCell.appendChild(priceInput);
         priceCell.appendChild(document.createTextNode("円"));
