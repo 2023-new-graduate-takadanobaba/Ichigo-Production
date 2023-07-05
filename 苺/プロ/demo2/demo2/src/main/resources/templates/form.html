@@ -14,7 +14,7 @@
     <h1 th:text="${listtoForms}"></h1>
     <div>購入商品一覧</div>
     <form method="post" th:action="@{/update}">
-        <div class="container text-center">
+        <div class="container text-center img-fluid">
         <table id="myTable" class="table text-nowrap">
             <tr>
                 <th>商品名</th>
@@ -28,7 +28,7 @@
                 <td><input type="number" name="amount" th:value="${bought.amount}"class="form-control"></td>
                 <td><input type="number" th:value="${bought.total}" id="total" readonly class="form-control"></td>
                 <td><input type="hidden" name="id" th:value="${bought.id}" class="form-control"></td>
-                <td><a th:href="@{/form-delate(id=${bought.id})}" class="form-control">削除</a></td>
+                <td><a th:href="@{/form-delate(id=${bought.id})}" class="form-control text-decoration-none">削除</a></td>
             </tr>
         </table>
         </div>
