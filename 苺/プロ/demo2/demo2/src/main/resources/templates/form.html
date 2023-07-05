@@ -17,15 +17,15 @@
     <div><span class="bg-secondary text-white">購入商品一覧</span></div>
     <form method="post" th:action="@{/update}">
 
-        <div class="container text-center bg-secondary text-white">
+        <div class="container text-center">
 
         <table id="myTable" class="table text-nowrap">
             <div class="bg-primary">
             <tr>
-                <th>商品名</th>
-                <th>価格</th>
-                <th>数量</th>
-                <th>合計</th>
+                <th><span class="p-3 mb-2 bg-secondary text-white">商品名</span></th>
+                <th><span class="p-3 mb-2 bg-secondary text-white">価格</span></th>
+                <th><span class="p-3 mb-2 bg-secondary text-white">数量</span></th>
+                <th><span class="p-3 mb-2 bg-secondary text-white">合計</span></th>
             </tr>
             </div>
             <tr th:each="bought: ${boughts}">
@@ -45,10 +45,10 @@
     <form method="post" th:action="@{/addgoods}">]
         <table>
             <tr>
-                <th>商品名</th>
-                <th>価格</th>
-                <th>数量</th>
-                <th>合計</th>
+                <th><span class="p-3 mb-2 bg-secondary text-white">商品名</span></th>
+                <th><span class="p-3 mb-2 bg-secondary text-white">価格</span></th>
+                <th><span class="p-3 mb-2 bg-secondary text-white">数量</span></th>
+                <th><span class="p-3 mb-2 bg-secondary text-white">合計</span></th>
             </tr>
             <tr>
                 <td><input type="text" name="goodsname" class="form-control"></td>
