@@ -55,7 +55,6 @@ function addForm() {
         var checkCell = document.createElement("th");
         var checkInput = document.createElement("input");
         checkInput.type = "checkbox";
-        checkInput.id = "check_" + (i + 2);
         checkInput.onclick = function () {
             changeCheckParameter(this);
         };
