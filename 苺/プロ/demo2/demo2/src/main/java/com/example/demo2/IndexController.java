@@ -16,8 +16,7 @@ public class IndexController {
 
     @PostMapping("/login")
     public String login(String name,HttpSession session){
-
-        session.getAttribute("user",name);
+        session.setAttribute("user",name);
         return "redirect:/";
     }
 }
