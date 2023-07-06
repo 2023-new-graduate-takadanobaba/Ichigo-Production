@@ -43,8 +43,8 @@
                         <input type="number" id="yokokei_001" name="yokokei_001">円
                     </td>
                     <td>
-                        <!-- <button type="button" onclick="deleteForm(this)" id="button_001" class="btn btn-outline-danger">削除</button>        -->
-                        <a th:href="@{/item-delete(id=${item.id})}" class="form-control text-decoration-none">削除</a>
+                        <button type="button" th:value="${item.id}" onclick="deleteItem(this)" id="button_001" class="btn btn-outline-danger">削除</button>       
+                        <!-- <a th:href="@{/item-delete(id=${item.id})}" class="form-control text-decoration-none">削除</a> -->
                     </td>
                 </tr>
             <tr>
