@@ -168,3 +168,10 @@ function changeCheckParameter(check){
         cell.querySelector("input[id^=check]").value="0"
     }
 }
+
+const deleteItem = (id) => {
+    //alert(id.value);
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET','/ichigo/deleteItem/'+id.value,true);
+    xhr.send()
+}
