@@ -60,7 +60,7 @@ function addForm() {
         };
         checkCell.appendChild(checkInput);
         newRow.appendChild(checkCell);
-    
+
 
         //KaimonoListのDBへ登録するための値
         var hiddenCell = document.createElement("input");
@@ -146,6 +146,10 @@ function addForm() {
 
 // 削除ボタンをクリックした時の処理
 function deleteForm(button) {
+    if (registerTable.rows.length == 3) {
+        alert("これ以上削除できません")
+        return false;
+    }
     // ボタンの親要素である<td>要素を取得
     // 行(<tr>)要素を取得
     var row = button.parentNode.parentNode;
@@ -155,22 +159,27 @@ function deleteForm(button) {
     // 再計算
     reCalc();
 
-    
+
 }
 
 
-function changeCheckParameter(check){
+function changeCheckParameter(check) {
     var cell = check.parentElement;
     var checkParameter = cell.querySelector("input[id=check]").value;
-    if(checkParameter == 0){
-        cell.querySelector("input[id^=check]").value="1"
+    if (checkParameter == 0) {
+        cell.querySelector("input[id^=check]").value = "1"
     } else {
-        cell.querySelector("input[id^=check]").value="0"
+        cell.querySelector("input[id^=check]").value = "0"
     }
 }
 
 const deleteItem = (id) => {
+    if (registerTable.rows.length == 3) {
+        alert("これ以上削除できません")
+        return false;
+    }
     const xhr = new XMLHttpRequest();
-    xhr.open('GET','/ichigo/deleteItem/'+id.value,true);
-    xhr.send()
+    xhr.open('GET', '/ichigo/deleteItem/' + id.value, true);
+    xhr.send();
+    deleteForm(id);
 }
