@@ -23,6 +23,8 @@ import com.example.demo2.form.RegisterForm;
 import com.example.demo2.repository.BoughtRepository;
 import com.example.demo2.repository.KaimonoListRepository;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class ListController {
 
@@ -44,7 +46,8 @@ public class ListController {
             @RequestParam("id") List<Integer> ids,
             @RequestParam("goodsname") List<String> goodsNames,
             @RequestParam("price") List<Integer> prices,
-            @RequestParam("amount") List<Integer> amounts) {
+            @RequestParam("amount") List<Integer> amounts,
+            HttpSession session) {
 
         List<KaimonoList> kaimonoLists = new ArrayList<>();
         List<Bought> boughts = new ArrayList<>();
@@ -63,6 +66,7 @@ public class ListController {
                 bought.setPrice(prices.get(i));
                 bought.setAmount(amounts.get(i));
                 bought.setTotal(prices.get(i) * amounts.get(i));
+                bought.setUser((String) session.getAttribute("user"));
                 boughts.add(bought);
                 boughts = boughtRepository.saveAll(boughts);
                 if (ids.get(i) != 0)
@@ -76,6 +80,7 @@ public class ListController {
                 kaimonoList.setGoodsname(goodsNames.get(i));
                 kaimonoList.setPrice(prices.get(i));
                 kaimonoList.setAmount(amounts.get(i));
+                kaimonoList.setUser((String)session.getAttribute("user"));
                 kaimonoLists.add(kaimonoList);
                 kaimonoLists = repository.saveAll(kaimonoLists);
             } else {
