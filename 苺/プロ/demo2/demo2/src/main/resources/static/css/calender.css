@@ -84,6 +84,7 @@ td.today {
 /*ボタン*/
 #next-prev-button {
     position: relative;
+    z-index: 10;
 }
 #next-prev-button button{
     width: 90px;
@@ -133,3 +134,55 @@ td.first-child-holoday{
     color:red;
 }
 
+<<<<<<< HEAD
+=======
+/*tabの形状*/
+.tab{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tab li a{
+    display:block;
+    background:#ddd;
+    margin:0,2px;
+    padding:10px
+}
+
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a{
+	background:#fff;
+    list-style:none;
+}
+
+
+/*エリアの表示非表示と形状*/
+.area {
+	display: none;/*はじめは非表示*/
+	opacity: 0;/*透過0*/
+	background: #fff;
+	padding:50px 20px;
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+    display: block;/*表示*/
+    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+    /* animation-duration: 2s; */
+    animation-fill-mode: forwards;
+}
+
+/*アニメーション名 {キーフレーム{ 変化させるプロパティ: 値; } }
+@keyframes規則はアニメーションの動きを指定する@規則です。
+animation-nameプロパティで指定したアニメーション名を参照し、
+各キーフレーム（経過点）ごとに変化させる要素のプロパティを指定します。
+また、animation-durationプロパティによる時間の指定は必須です。*/
+@keyframes displayAnime{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+>>>>>>> cdfd6afd7b13d724fc1c069d28ac4240c2ae8b06
