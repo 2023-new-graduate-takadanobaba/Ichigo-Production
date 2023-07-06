@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "bought")
-public class Bought{
+public class Bought {
 
     @Id
     @GeneratedValue
@@ -29,6 +29,17 @@ public class Bought{
     @Column
     private Integer total;
 
+    @Column
+    private String user;
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
     public Integer getTotal() {
         return total;
     }
@@ -45,7 +56,7 @@ public class Bought{
         this.id = id;
     }
 
-   public String getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
