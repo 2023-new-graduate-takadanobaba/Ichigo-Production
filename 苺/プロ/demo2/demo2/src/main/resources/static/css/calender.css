@@ -16,12 +16,16 @@
 }
 
 /*カレンダー*/
+
 #calendar {
     text-decoration: none;
     text-align: center;
     font-size: 20px;
     width: 100%;
 }
+
+
+
 table {
     outline: 5px solid #ddd;
     border-collapse: collapse;
@@ -36,8 +40,22 @@ th, td {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
-    height:100px ;
+    height: 100px;
 }
+@media screen and (max-width: 480px){ 
+    th, td {
+    background-color: rgba(252, 248, 213,0.5);
+    outline: 2px solid #ddd;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    text-align: center;
+    height:10px ;
+}
+}
+
+
+
+
 /*日曜日*/
 td:first-child {
     background-color: rgb(252, 248, 213);
@@ -116,6 +134,8 @@ td.first-child-holoday{
     color:red;
 }
 
+<<<<<<< HEAD
+=======
 /*tabの形状*/
 .tab{
     display: flex;
@@ -165,3 +185,4 @@ animation-nameプロパティで指定したアニメーション名を参照し
 		opacity: 1;
 	}
 }
+>>>>>>> cdfd6afd7b13d724fc1c069d28ac4240c2ae8b06
