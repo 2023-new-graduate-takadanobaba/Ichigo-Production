@@ -134,8 +134,6 @@ td.first-child-holoday{
     color:red;
 }
 
-<<<<<<< HEAD
-=======
 /*tabの形状*/
 .tab{
     display: flex;
@@ -185,4 +183,3 @@ animation-nameプロパティで指定したアニメーション名を参照し
 		opacity: 1;
 	}
 }
->>>>>>> cdfd6afd7b13d724fc1c069d28ac4240c2ae8b06
