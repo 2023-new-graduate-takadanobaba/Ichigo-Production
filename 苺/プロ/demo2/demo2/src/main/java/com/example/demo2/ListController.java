@@ -23,6 +23,8 @@ import com.example.demo2.form.RegisterForm;
 import com.example.demo2.repository.BoughtRepository;
 import com.example.demo2.repository.KaimonoListRepository;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class ListController {
 
@@ -33,25 +35,28 @@ public class ListController {
     BoughtRepository boughtRepository;
 
     @GetMapping("/list")
-    public String showItemList(Model model) {
-        model.addAttribute("items", repository.findAll());
+    public String showItemList(Model model,HttpSession session) {
+        model.addAttribute("items", repository.findByUser((String) session.getAttribute("user")));
 
         return "list";
     }
 
     @PostMapping("/regist")
     public String regist(@RequestParam("check") List<Integer> checks,
-            @RequestParam("id")List<Integer>ids,
+            @RequestParam("id") List<Integer> ids,
             @RequestParam("goodsname") List<String> goodsNames,
             @RequestParam("price") List<Integer> prices,
-            @RequestParam("amount") List<Integer> amounts) {
+            @RequestParam("amount") List<Integer> amounts,
+            HttpSession session) {
 
         List<KaimonoList> kaimonoLists = new ArrayList<>();
         List<Bought> boughts = new ArrayList<>();
 
         for (int i = 0; i < goodsNames.size(); i++) {
-
-            if (checks.get(i) == 1 ) {
+            if (goodsNames.get(i).isEmpty()) {
+                continue;
+            }
+            if (checks.get(i) == 1) {
                 Bought bought = new Bought();
                 Date now = new Date();
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
@@ -61,20 +66,24 @@ public class ListController {
                 bought.setPrice(prices.get(i));
                 bought.setAmount(amounts.get(i));
                 bought.setTotal(prices.get(i) * amounts.get(i));
+                bought.setUser((String) session.getAttribute("user"));
                 boughts.add(bought);
                 boughts = boughtRepository.saveAll(boughts);
-                if(ids.get(i) !=0);{
-                repository.deleteById(ids.get(i));
+                if (ids.get(i) != 0)
+                    ;
+                {
+                    repository.deleteById(ids.get(i));
                 }
-            
-            } else if (checks.get(i) == 0 && ids.get(i)==0) {
+
+            } else if (checks.get(i) == 0 && ids.get(i) == 0) {
                 KaimonoList kaimonoList = new KaimonoList();
                 kaimonoList.setGoodsname(goodsNames.get(i));
                 kaimonoList.setPrice(prices.get(i));
                 kaimonoList.setAmount(amounts.get(i));
+                kaimonoList.setUser((String)session.getAttribute("user"));
                 kaimonoLists.add(kaimonoList);
                 kaimonoLists = repository.saveAll(kaimonoLists);
-            }else {
+            } else {
                 KaimonoList kaimonoList = repository.getReferenceById(ids.get(i));
                 kaimonoList.setGoodsname(goodsNames.get(i));
                 kaimonoList.setPrice(prices.get(i));
@@ -82,10 +91,10 @@ public class ListController {
                 BeanUtils.copyProperties(kaimonoList, kaimonoList, "id");
                 kaimonoList = repository.save(kaimonoList);
             }
-            
+
         }
 
-        return "redirect:/list";
+        return "redirect:/";
     }
 
     @RequestMapping(path = "/gorori")
@@ -94,29 +103,7 @@ public class ListController {
         return "redirect:/list";
     }
 
-    @PostMapping(path = "/kanryo")
-    public String formregist(@RequestParam("check") List<Integer> abc) {
-
-        for (int i = 0; i < abc.size(); i++) {
-            if (abc.get(i) != 0) {
-                KaimonoList bou = repository.getReferenceById(abc.get(i));
-                Bought itemBean = new Bought();
-                BeanUtils.copyProperties(bou, itemBean, "id");
-                Date now = new Date();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
-                String str = sdf.format(now);
-                itemBean.setCreateTime(str);
-                itemBean.setTotal(itemBean.getPrice() * itemBean.getAmount());
-                itemBean = boughtRepository.save(itemBean);
-            }
-
-        }
-
-        return "calender";
-
-    }
-
-        // 行のデータの削除を行う
+    // 行のデータの削除を行う
     @RequestMapping(path = "/item-delete", method = RequestMethod.GET)
     public String delateListItem(int id) {
         KaimonoList kaimonoList = repository.getReferenceById(id);
@@ -128,7 +115,7 @@ public class ListController {
 
     }
 
-        // formのデータを削除する
+    // formのデータを削除する
     public void delete(Integer id) {
 
         // idを指定して、データベースからデータを削除する
@@ -136,7 +123,7 @@ public class ListController {
     }
 
     @GetMapping("/deleteItem/{id}")
-    public String deleteItem(@PathVariable int id){
+    public String deleteItem(@PathVariable int id) {
         repository.deleteById(id);
         return "list";
     }
