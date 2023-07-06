@@ -50,7 +50,9 @@ public class ListController {
         List<Bought> boughts = new ArrayList<>();
 
         for (int i = 0; i < goodsNames.size(); i++) {
-
+            if(goodsNames.get(i).isEmpty()){
+                continue;
+            }
             if (checks.get(i) == 1 ) {
                 Bought bought = new Bought();
                 Date now = new Date();
@@ -85,7 +87,7 @@ public class ListController {
             
         }
 
-        return "redirect:/list";
+        return "redirect:/";
     }
 
     @RequestMapping(path = "/gorori")
