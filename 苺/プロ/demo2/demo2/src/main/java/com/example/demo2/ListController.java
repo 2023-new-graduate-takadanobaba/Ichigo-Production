@@ -96,29 +96,6 @@ public class ListController {
         return "redirect:/list";
     }
 
-    @PostMapping(path = "/kanryo")
-    public String formregist(//@RequestParam("check") List<Integer> abc
-    ) {
-
-        // for (int i = 0; i < abc.size(); i++) {
-        //     if (abc.get(i) != 0) {
-        //         KaimonoList bou = repository.getReferenceById(abc.get(i));
-        //         Bought itemBean = new Bought();
-        //         BeanUtils.copyProperties(bou, itemBean, "id");
-        //         Date now = new Date();
-        //         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
-        //         String str = sdf.format(now);
-        //         itemBean.setCreateTime(str);
-        //         itemBean.setTotal(itemBean.getPrice() * itemBean.getAmount());
-        //         itemBean = boughtRepository.save(itemBean);
-        //     }
-
-        // }
-
-        return "calender";
-
-    }
-
         // 行のデータの削除を行う
     @RequestMapping(path = "/item-delete", method = RequestMethod.GET)
     public String delateListItem(int id) {
