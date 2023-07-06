@@ -172,5 +172,6 @@ function changeCheckParameter(check){
 const deleteItem = (id) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET','/ichigo/deleteItem/'+id.value,true);
-    xhr.send()
+    xhr.send();
+    deleteForm(id);
 }
