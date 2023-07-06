@@ -25,9 +25,9 @@ public class FormController {
 
     // formを表示する
     @RequestMapping(path = "/form/{date}", method = RequestMethod.GET)
-    public String Form(@PathVariable String date, Model model) {
+    public String Form(@PathVariable String date, Model model, HttpSession session) {
 
-        model.addAttribute("boughts", repository.findByCreateTimeContaining(date));
+        model.addAttribute("boughts", repository.findByCreateTimeContainingAndUser(date,((String) session.getAttribute("user"))));
 
         return "form";
     }
