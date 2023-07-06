@@ -35,8 +35,8 @@ public class ListController {
     BoughtRepository boughtRepository;
 
     @GetMapping("/list")
-    public String showItemList(Model model) {
-        model.addAttribute("items", repository.findAll());
+    public String showItemList(Model model,HttpSession session) {
+        model.addAttribute("items", repository.findByUser((String) session.getAttribute("user")));
 
         return "list";
     }
