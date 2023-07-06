@@ -17,7 +17,7 @@
 
     <form method="post" th:action="@{/regist}">
 
-    <table>
+    <table id="registerTable">
         <thead>
             
             <tr>
@@ -74,30 +74,8 @@
             </tr>
         </tfoot>
     </table>
-    <input type="submit" value="登録">
+    <input type="submit" value="登録して戻る">
 </form>
-<form method="post" th:action="@{/kanryo}">
-<table>
-    <tr>
-        <th> </th>
-    <th>商品番号</th>
-    <th>商品名</th>
-    <th>価格</th>
-    <th>数量</th>
-    </tr>
-    <form>
-  
-    <input type="submit" value="完了">
-    </table>
-
-</form>
-<div>商品の削除</div>
-<form method="post" th:action="@{/gorori}">
-    商品番号:<input type="text" name="id"/>
-    <input type="submit" value="削除する"/>
-</form>
-
-
 
     <div class="d-flex flex-row-reverse bd-highlight">
     <button onclick="addForm()" class="btn btn-outline-primary" >+</button>
