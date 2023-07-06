@@ -137,7 +137,7 @@ function isHoliday(year, month, day) {
 $(window).on('load',function(){
     $('.tab li:first-of-type').addClass("active");
     $('.area:first-of-type').addClass("is-active");
-    var hashName = location.hash;
+    var hashName = "#calendar";  // location.hash;
     TabChanger(hashName);
 });
 
