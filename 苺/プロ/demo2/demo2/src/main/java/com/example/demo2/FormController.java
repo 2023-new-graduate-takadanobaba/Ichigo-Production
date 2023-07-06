@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo2.entity.Bought;
 import com.example.demo2.repository.BoughtRepository;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class FormController {
     @Autowired
@@ -23,9 +25,9 @@ public class FormController {
 
     // formを表示する
     @RequestMapping(path = "/form/{date}", method = RequestMethod.GET)
-    public String Form(@PathVariable String date, Model model) {
+    public String Form(@PathVariable String date, Model model, HttpSession session) {
 
-        model.addAttribute("boughts", repository.findByCreateTimeContaining(date));
+        model.addAttribute("boughts", repository.findByCreateTimeContainingAndUser(date,((String) session.getAttribute("user"))));
 
         return "form";
     }
@@ -71,7 +73,8 @@ public class FormController {
     @PostMapping("/addgoods")
     public String addgoods(@RequestParam("goodsname") String goodsNames,
             @RequestParam("price") int prices,
-            @RequestParam("amount") int amounts) {
+            @RequestParam("amount") int amounts,
+            HttpSession session) {
         Bought bought = new Bought();
         Date now = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
@@ -81,6 +84,7 @@ public class FormController {
         bought.setPrice(prices);
         bought.setAmount(amounts);
         bought.setTotal(prices * amounts);
+        bought.setUser((String)session.getAttribute("user"));
         bought = repository.save(bought);
         return "redirect:/form/" + bought.getCreateTime();
     }
