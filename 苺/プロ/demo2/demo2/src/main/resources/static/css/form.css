@@ -3,17 +3,24 @@ body {
     background-image: url("https://dol.ismcdn.jp/mwimgs/5/3/650/img_090f63b727f2d8a6712bffe2133c587e80808.jpg");
     
  }
-
+ @media screen and (max-width: px){ 
  input.short-button{
-    width: 10%;
+    width: 10px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
  }
+ }
 
+ @media screen and (max-width: 480px){ 
  input.little-short-button{
     width: 15%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+ }
+
+ 
+
+
  }
