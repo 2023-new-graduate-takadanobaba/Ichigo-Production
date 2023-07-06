@@ -35,7 +35,7 @@
                 <td><input type="number" name="amount" th:value="${bought.amount}"class="form-control"></td>
                 <td><input type="number" th:value="${bought.total}" id="total" readonly class="form-control"></td>
                 <td><input type="hidden" name="id" th:value="${bought.id}" class="form-control"></td>
-                <td><a th:href="@{/form-delate(id=${bought.id})}" class="form-control text-decoration-none btn btn-outline-danger btn-info">削除</a></td>
+                <td><a th:href="@{/form-delete(id=${bought.id})}" class="form-control text-decoration-none btn btn-outline-danger btn-info">削除</a></td>
             </tr>
         </table>
         </div>
