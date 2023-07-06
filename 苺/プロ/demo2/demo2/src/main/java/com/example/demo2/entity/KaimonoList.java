@@ -25,8 +25,21 @@ public class KaimonoList {
     @Column
     private Integer amount;
 
+    @Column
+    private String user;
 
-	public Integer getId() {
+
+	public String getUser() {
+        return user;
+    }
+
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+
+    public Integer getId() {
         return id;
     }
 
