@@ -16,7 +16,7 @@
 
     <h1 th:text="${listtoForms}"></h1>
     <div><span class="p-1 mb-1 bg-info text-white rounded-pill">購入商品一覧</span></div>
-    <form method="post" th:action="@{/update}"> 
+    <form onSubmit="return update()" method="post" th:action="@{/update}"> 
 
         <div class="container text-center">
 
@@ -71,6 +71,8 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
         </style>
+        <button onclick="update();" >講演会</button>
 </body>
+
 
 
