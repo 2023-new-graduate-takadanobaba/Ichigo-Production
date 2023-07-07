@@ -68,7 +68,6 @@ public class ListController {
                 boughts.add(bought);
                 boughts = boughtRepository.saveAll(boughts);
                 if (ids.get(i) != 0)
-                    ;
                 {
                     repository.deleteById(ids.get(i));
                 }
