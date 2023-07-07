@@ -77,3 +77,13 @@ function sum() {
   total = Number(price) * Number(amount);
   return total;
 }
+
+const update = () => {
+  if (myTable.rows.length == 1) {
+    alert("更新できないYO！！！");
+    return false;
+    
+  }else{
+    return true;
+  }
+}
