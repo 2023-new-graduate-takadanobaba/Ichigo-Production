@@ -89,11 +89,10 @@ const update = () => {
 }
 
 const additem = () =>{
-  if(!addgoods){
-    alert(addgoods.value);
-    return false;
-  } else {
-    alert(addgoods.value);
+  if(addgoods.value && addtanaka.value && addsuryo.value){
     return true;
+  } else {
+    alert("それはうてねえよ");
+    return false;
   }
 }
