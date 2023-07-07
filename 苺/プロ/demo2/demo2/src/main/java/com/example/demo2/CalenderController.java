@@ -15,7 +15,7 @@ public class CalenderController {
    
 
     // カレンダーを表示する
-    @GetMapping("/ichigo")
+    @GetMapping("/calendar")
     public String ichigo() {
         return "calender";
     }
