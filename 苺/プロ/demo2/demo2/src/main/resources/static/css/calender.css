@@ -98,6 +98,21 @@ td.today {
     padding: 0.5rem 2rem;
     margin: 1rem 0;
 }
+@media screen and (max-width: 480px){ 
+#next-prev-button button{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: #4aa7b7;
+    color: #fff;
+    border: 1px solid #B78D4A;
+    border-radius: 20px;
+    font-size: 30px;
+    padding: 0.5rem 2rem;
+    margin: 1rem 0;
+}
+}
+
 #next-prev-button button:hover{
     background-color: #9c92d4;
     border-color: #D4BB92;
@@ -105,6 +120,7 @@ td.today {
 
 #prev {
     float: left;
+    
 }
 #next {
     float: right;
@@ -182,4 +198,11 @@ animation-nameプロパティで指定したアニメーション名を参照し
 	to {
 		opacity: 1;
 	}
+}
+
+li{
+    list-style: none;
+    padding-left: 0%;
+    padding-right: 0%
+    ;
 }
