@@ -89,10 +89,14 @@ const update = () => {
 }
 
 const additem = () =>{
-  if(addgoods.value && addtanaka.value && addsuryo.value){
-    return true;
-  } else {
-    alert("それはうてねえよ");
+  if(!addgoods.value){
+    alert("名前がねぇよぉ");
     return false;
-  }
+    } else if(!addtanka.value){
+      alert("価格がねぇよぉ");
+      return false;
+    } else if(!addsuryo.value){
+      alert("数がねぇよぉ");
+      return false;
+    }
 }
