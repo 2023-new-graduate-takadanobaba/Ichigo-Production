@@ -72,8 +72,8 @@ function reCalc() {
 }
 
 function sum() {
-  price = document.getElementById("tanka").value;
-  amount = document.getElementById("suryo").value;
+  price = document.getElementById("addtanka").value;
+  amount = document.getElementById("addsuryo").value;
   total = Number(price) * Number(amount);
   return total;
 }
@@ -89,10 +89,14 @@ const update = () => {
 }
 
 const additem = () =>{
-  if(addgoods.value && addtanaka.value && addsuryo.value){
-    return true;
-  } else {
-    alert("それはうてねえよ");
+  if(!addgoods.value){
+    alert("名前がねぇよぉ");
     return false;
-  }
+    } else if(!addtanka.value){
+      alert("価格がねぇよぉ");
+      return false;
+    } else if(!addsuryo.value){
+      alert("数がねぇよぉ");
+      return false;
+    } 
 }
