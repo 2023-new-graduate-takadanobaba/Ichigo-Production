@@ -28,10 +28,6 @@ public class TestController {
         return "test";
     }
 
-    @GetMapping("/")
-    public String calender() {
-        return "calender";
-    }
 
     // @PostMapping("/test/regist")
     // public String registTest(@RequestParam("check") List<Integer> checks,
