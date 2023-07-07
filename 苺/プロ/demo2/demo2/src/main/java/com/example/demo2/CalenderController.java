@@ -23,7 +23,7 @@ public class CalenderController {
     // formの完了押したときに動く機能
     @PostMapping("/")
     public String doRegister(RegisterForm form, HttpSession session) {
-        // CRUDで登録する記述をする
+        session.removeAttribute("pageDate");
         return "calender";
     }
 
