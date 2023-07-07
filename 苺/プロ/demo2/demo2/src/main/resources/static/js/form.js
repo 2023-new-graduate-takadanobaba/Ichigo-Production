@@ -98,5 +98,5 @@ const additem = () =>{
     } else if(!addsuryo.value){
       alert("数がねぇよぉ");
       return false;
-    }
+    } 
 }
