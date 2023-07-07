@@ -27,7 +27,7 @@ public class FormController {
     public String Form(@PathVariable String date, Model model, HttpSession session) {
 
         model.addAttribute("boughts", repository.findByCreateTimeContainingAndUser(date,((String) session.getAttribute("user"))));
-
+        session.setAttribute("pageDate",date);
         return "form";
     }
 
@@ -75,10 +75,7 @@ public class FormController {
             @RequestParam("amount") int amounts,
             HttpSession session) {
         Bought bought = new Bought();
-        Date now = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
-        String str = sdf.format(now);
-        bought.setCreateTime(str);
+        bought.setCreateTime((String) session.getAttribute("pageDate"));
         bought.setGoodsname(goodsNames);
         bought.setPrice(prices);
         bought.setAmount(amounts);
