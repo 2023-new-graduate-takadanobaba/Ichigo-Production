@@ -13,8 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo2.entity.Bought;
@@ -97,14 +95,14 @@ public class ListController {
         return "redirect:/";
     }
 
-    @RequestMapping(path = "/gorori")
+    @GetMapping("/gorori")
     public String delete(RegisterForm form) {
         repository.deleteById(form.getId());
         return "redirect:/list";
     }
 
     // 行のデータの削除を行う
-    @RequestMapping(path = "/item-delete", method = RequestMethod.GET)
+    @GetMapping("/item-delete")
     public String delateListItem(int id) {
         KaimonoList kaimonoList = repository.getReferenceById(id);
         // データベースのデータを削除する
