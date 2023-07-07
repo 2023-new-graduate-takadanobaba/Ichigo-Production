@@ -91,7 +91,7 @@ public class ListController {
 
         }
 
-        return "redirect:/";
+        return "redirect:/calendar";
     }
 
     @GetMapping("/gorori")
