@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class IndexController {
     
-    @GetMapping("/index")
+    @GetMapping("/")
     public String index(){
         return "index";
     } 
@@ -17,6 +17,6 @@ public class IndexController {
     @PostMapping("/login")
     public String login(String name,HttpSession session){
         session.setAttribute("user",name);
-        return "redirect:/";
+        return "redirect:/calendar";
     }
 }
