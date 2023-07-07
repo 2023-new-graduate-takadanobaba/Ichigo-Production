@@ -35,13 +35,13 @@
                         <input type="hidden" name="id" th:value="${item.id}">
                     </td>
                     <td>
-                        <input type="number" th:value="${item.price}"id="tanka_001" name="price" onchange="reCalc();" class="form-control">円
+                        <input type="number" th:value="${item.price}"id="tanka_001" name="price" onchange="reCalc();" class="form-control">
                     </td>
                     <td>
-                        <input type="number" th:value="${item.amount}"id="suryo_001" name="amount" value="1" onchange="reCalc();" class="form-control">個
+                        <input type="number" th:value="${item.amount}"id="suryo_001" name="amount" value="1" onchange="reCalc();" class="form-control">
                     </td>
                     <td>
-                        <input type="number" id="yokokei_001" name="yokokei_001" class="form-control">円
+                        <input type="number" id="yokokei_001" name="yokokei_001" class="form-control">
                     </td>
                     <td>
                         <button type="button" th:value="${item.id}" onclick="deleteItem(this)" id="button_001" class="btn btn-outline-danger">削除</button>       
@@ -58,13 +58,13 @@
                     <input type="hidden"name="id" value="0">
                 </td>
                 <td>
-                    <input type="number" id="tanka_001" name="price" onchange="reCalc();" value="0" class="form-control">円
+                    <input type="number" id="tanka_001" name="price" onchange="reCalc();" value="0" class="form-control">
                 </td>
                 <td>
-                    <input type="number" id="suryo_001" name="amount" value="1" onchange="reCalc();" class="form-control">個
+                    <input type="number" id="suryo_001" name="amount" value="1" onchange="reCalc();" class="form-control">
                 </td>
                 <td>
-                    <input type="number" id="yokokei_001" name="yokokei_001" class="form-control">円
+                    <input type="number" id="yokokei_001" name="yokokei_001" class="form-control">
                 </td>
                 <td>
                     <button type="button" onclick="deleteForm(this)" id="button_001" class="btn btn-outline-danger">削除</button>       
