@@ -88,9 +88,12 @@ const update = () => {
   }
 }
 
-const addgoods = () =>{
-  if (!addgoods.value){
-    alert("Twitter")
+const additem = () =>{
+  if(!addgoods){
+    alert(addgoods.value);
+    return false;
+  } else {
+    alert(addgoods.value);
+    return true;
   }
-
 }
