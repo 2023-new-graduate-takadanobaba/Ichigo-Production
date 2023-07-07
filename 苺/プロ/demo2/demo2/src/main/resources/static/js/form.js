@@ -87,3 +87,10 @@ const update = () => {
     return true;
   }
 }
+
+const addgoods = () =>{
+  if (!addgoods.value){
+    alert("Twitter")
+  }
+
+}
