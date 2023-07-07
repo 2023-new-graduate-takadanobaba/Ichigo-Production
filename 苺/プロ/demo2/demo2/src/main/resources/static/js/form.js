@@ -89,7 +89,7 @@ const update = () => {
 }
 
 const addgoods = () =>{
-  if (!addgoods.value){
+  if (addgood.value){
     alert("Twitter")
   }
 
