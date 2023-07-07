@@ -72,8 +72,8 @@ function reCalc() {
 }
 
 function sum() {
-  price = document.getElementById("tanka").value;
-  amount = document.getElementById("suryo").value;
+  price = document.getElementById("addtanka").value;
+  amount = document.getElementById("addsuryo").value;
   total = Number(price) * Number(amount);
   return total;
 }
