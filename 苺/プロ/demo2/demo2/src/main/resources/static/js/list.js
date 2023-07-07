@@ -52,7 +52,7 @@ function addForm() {
 
 
         //checkbox列を追加
-        var checkCell = document.createElement("th");
+        var checkCell = document.createElement("td");
         var checkInput = document.createElement("input");
         checkInput.type = "checkbox";
         checkInput.onclick = function () {
@@ -72,20 +72,22 @@ function addForm() {
         newRow.appendChild(checkCell);
 
         // 商品名列を追加
-
+        var nameCell = document.createElement("td");
         var nameInput = document.createElement("input");
         nameInput.type = "text";
         nameInput.name = "goodsname";
+        nameInput.class="form-control";
         nameInput.placeholder = "商品名";
-        checkCell.appendChild(nameInput);
+        nameInput.className="form-control";
+        nameCell.appendChild(nameInput);
 
         //id列を追加
         var idInput = document.createElement("input");
         idInput.type = "hidden";
         idInput.name = "id";
         idInput.value = "0";
-        checkCell.appendChild(idInput);
-
+        nameCell.appendChild(idInput);
+        newRow.appendChild(nameCell);
 
         // 単価列を追加
         var priceCell = document.createElement("td");
@@ -94,9 +96,10 @@ function addForm() {
         priceInput.name = "price";
         priceInput.id = "tanka_" + (i + 2); // ユニークなIDを設定
         priceInput.value = "0";
+        priceInput.className="form-control";
         priceInput.onchange = reCalc;
         priceCell.appendChild(priceInput);
-        priceCell.appendChild(document.createTextNode("円"));
+        priceCell.appendChild(document.createTextNode(""));
         newRow.appendChild(priceCell);
 
         // 数量列を追加
@@ -106,9 +109,10 @@ function addForm() {
         quantityInput.name = "amount";
         quantityInput.value = "1";
         quantityInput.id = "suryo_" + (i + 2); // ユニークなIDを設定
+        quantityInput.className="form-control";
         quantityInput.onchange = reCalc;
         quantityCell.appendChild(quantityInput);
-        quantityCell.appendChild(document.createTextNode("個"));
+        quantityCell.appendChild(document.createTextNode(""));
         newRow.appendChild(quantityCell);
 
         // 合計列を追加
@@ -118,8 +122,9 @@ function addForm() {
         totalInput.name = "yokokei";
         totalInput.value = "0";
         totalInput.id = "yokokei_" + (i + 2); // ユニークなIDを設定
+        totalInput.className="form-control";
         totalCell.appendChild(totalInput);
-        totalCell.appendChild(document.createTextNode("円"));
+        totalCell.appendChild(document.createTextNode(""));
         newRow.appendChild(totalCell);
 
         //削除列を追加
@@ -127,6 +132,7 @@ function addForm() {
         var deleteButton = document.createElement("button");
         deleteButton.type = "button";
         deleteButton.id = "button_" + (i + 2);
+        deleteButton.className="btn btn-outline-danger";
         deleteButton.textContent = "削除";
         deleteButton.onclick = function () {
             deleteForm(this);

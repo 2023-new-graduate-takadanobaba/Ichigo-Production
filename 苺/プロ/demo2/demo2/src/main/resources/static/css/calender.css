@@ -4,15 +4,15 @@
 .wrapper{
     width: 1200px;
     margin: 0 auto;
-    color: #666;
+    color: #666666;
    
 }
 #header {
     text-align: center;
     font-size: 35px;
     width: 100%;
-    margin-top: 15px;
-    padding:10px;
+    margin: -10px;
+    padding:-10px;
 }
 
 /*カレンダー*/
@@ -87,29 +87,29 @@ td.today {
     z-index: 10;
 }
 #next-prev-button button{
-    width: 90px;
-    height: 65px;
+    width: 6.5%;
+    height: 3%;
+    text-align: center;
     cursor: pointer;
     background: #4aa7b7;
     color: #fff;
     border: 1px solid #B78D4A;
     border-radius: 20px;
     font-size: 30px;
-    padding: 0.5rem 2rem;
-    margin: 1rem 0;
+    margin-bottom: 1.5%;
 }
 @media screen and (max-width: 480px){ 
 #next-prev-button button{
-    width: 20px;
-    height: 20px;
+    width: 15%;
+    height: 1%;
     cursor: pointer;
     background: #4aa7b7;
     color: #fff;
     border: 1px solid #B78D4A;
     border-radius: 20px;
-    font-size: 30px;
-    padding: 0.5rem 2rem;
-    margin: 1rem 0;
+    font-size: 100%;
+    padding: 2%;
+    margin-bottom: 1% ;
 }
 }
 
@@ -120,8 +120,8 @@ td.today {
 
 #prev {
     float: left;
-    
 }
+
 #next {
     float: right;
 }
@@ -201,8 +201,44 @@ animation-nameプロパティで指定したアニメーション名を参照し
 }
 
 li{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top:20px;
+    padding: 10px;
+    background: #4aa7b7;
     list-style: none;
-    padding-left: 0%;
-    padding-right: 0%
-    ;
+    border-radius: 5px;
+    border-color: #D65E72;
+}
+
+ul {
+    padding-left: 15%;
+}
+
+@media screen and (max-width: 480px){ 
+    li{
+        font-size: 5px;
+        font-weight: bold;
+        margin-top:10px;
+        padding: 3px;
+        background: #4aa7b7;
+        list-style: none;
+        border-radius: 3px;
+        border-color: #D65E72;
+    }
+}
+
+@media screen and (max-width: 480px){ 
+    ul{
+        padding-left: 3%;
+    }
+}
+
+@media screen and (max-width:480px){
+    #header{text-align: center;
+    font-size: 25px;
+    width: 100%;
+    margin: -10px;
+    padding:-10px;
+    }
 }
