@@ -199,3 +199,10 @@ animation-nameプロパティで指定したアニメーション名を参照し
 		opacity: 1;
 	}
 }
+
+li{
+    list-style: none;
+    padding-left: 0%;
+    padding-right: 0%
+    ;
+}
