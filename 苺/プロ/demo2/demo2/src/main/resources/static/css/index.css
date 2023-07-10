@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+h1{
+    text-align: center;
+    font-size: 120px;
+    margin-bottom: 0%;
+}
+
+form.form{
+    margin-top: 60px;
+    text-align: center;
+    font-size: 80px;
+    color: red;
+}
+
+span.xu{
+   margin-top: 25px;
+    text-align: center;
+    font-size: 45px;
+    color: orange;
+}
+
+span.ku{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 55px;
+    color: yellow;
+}
+
+span.ne{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 65px;
+    color: green;
+}
+
+span.xe{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 45px;
+    color: blue;
+}
+
+span.mu{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 50px;
+    color: rgb(187, 0, 255);
+}
+
+div.login{
+    margin-top: -50px;
+    height: 20px;
+}
+
+input.name{
+    font-size: 25px;
+    border-radius: 20px;
+}
+
+input.login{
+    border-radius: 20px;
+}
+
