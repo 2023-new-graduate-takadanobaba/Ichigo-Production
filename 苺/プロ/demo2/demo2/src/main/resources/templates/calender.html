@@ -31,7 +31,7 @@
         <button id="next" onclick="next()">›</button>
     </div>
     <div id="calendar" class="area"></div>
-    <div id="statisticsTab" class="area"><h1 th:text="${sum}"></h1></div>
+    <div id="statisticsTab" class="area"><h1 th:text="${session.sum}"></h1></div>
 </div>
 <form method="GET" th:action="@{/list}">
     <input class="color" type="submit" value="購入予定リスト">
