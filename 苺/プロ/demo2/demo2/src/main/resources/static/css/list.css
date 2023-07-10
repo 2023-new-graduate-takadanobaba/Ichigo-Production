@@ -8,15 +8,13 @@ button.btn-outline-primary{
 
  div.mgnleft{
     margin-top: 150px;
-    margin-right: 90px;
+    margin-right: 100px;
+    
  }
 
-span.back{
-    margin-bottom: 20px;
-}
-
-span.plus{
-    margin-bottom: 20px;
+div.back{
+    margin-top: 50px;
+    margin-left: 1250px;
 }
 
 
