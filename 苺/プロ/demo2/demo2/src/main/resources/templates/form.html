@@ -10,9 +10,8 @@
     <title>Insert title here</title>
     
 </head>
-
 <body onload="calculateSum();" class="bg-primary-subtle text-white">
-
+    <div class="margin"></div>
     <h1 th:text="${listtoForms}"></h1>
     <div><span class="p-1 mb-1 bg-info text-white rounded-pill">購入商品一覧</span></div>
     <form onSubmit="return update()" method="post" th:action="@{/update}"> 
