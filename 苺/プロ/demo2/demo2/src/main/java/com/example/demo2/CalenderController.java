@@ -45,7 +45,7 @@ public class CalenderController {
     @PostMapping("/")
     public String doRegister(RegisterForm form, HttpSession session) {
         session.removeAttribute("pageDate");
-        return "calender";
+        return "redirect:/calendar";
     }
 
 }
