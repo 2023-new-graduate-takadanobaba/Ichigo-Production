@@ -3,15 +3,16 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link th:href="@{/css/list.css}" rel="stylesheet"/>
+    <link th:href="@{/css/form.css}" rel="stylesheet"/>
     <script th:src="@{/js/list.js}" defer></script>
     
-</head>
-
+</hea<d>
+<div class="container text-center mgnleft">
 <body onload="reCalc();">
-   
-    
-
     <form method="post" th:action="@{/regist}">
+    <span class="back"><input type="submit" value="登録して戻る"></span>
+        <span class="plus"><button onclick="addForm()" class="btn btn-outline-primary" >+</button></span>
+    <!-- <form method="post" th:action="@{/regist}"> -->
         <div class="container text-center">
     <table id="registerTable">
         <thead>
@@ -81,16 +82,12 @@
         </tfoot>
     </table>
         </div>
-        <input type="submit" value="登録して戻る">
-</form>
-
-    <div class="d-flex flex-row-reverse bd-highlight">
-    <button onclick="addForm()" class="btn btn-outline-primary" >+</button>
-
-   
-      
-    </form>
     </div>
+       <!-- <span class="back"><input type="submit" value="登録して戻る"> -->
+</form>
+    <!-- <button onclick="addForm()" class="btn btn-outline-primary" >+</button> -->
+    </form>
+<!-- </span> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
