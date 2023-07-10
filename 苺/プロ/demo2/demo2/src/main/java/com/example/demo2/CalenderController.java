@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -29,7 +28,7 @@ public class CalenderController {
 
     // カレンダーを表示する
     @GetMapping("/calendar")
-        public String ichigo(HttpSession session, Model model) {
+        public String ichigo(HttpSession session) {
         Date now = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M");
         String str = sdf.format(now);
@@ -39,7 +38,7 @@ public class CalenderController {
         for (Bought bought : boughts) {
             sum += bought.getTotal();
         }
-        model.addAttribute("sum", sum);
+        session.setAttribute("sum", sum);
         return "calender";
     }
     // formの完了押したときに動く機能
