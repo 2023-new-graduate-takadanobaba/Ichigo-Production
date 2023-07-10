@@ -2,14 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-
+    <link th:href="@{/css/form.css}" rel="stylesheet"/>
+    <link th:href="@{/css/index.css}" rel="stylesheet"/>
 </head>
 
 <body>
 <h1>ログイン画面</h1>
-<form method="post" th:action="@{/login}">
-    ニックネーム<input type="text" name="name">
-    <input type="submit" value="ログイン">
+<span>
+    <form method="post" th:action="@{/login}" class="form">に
+</span>
+<span class="xu">っ</span>
+<span class="ku">く</span>
+<span class="ne">ね</span>
+<span class="xe">ぇ</span>
+<span class="mu">む</span>
+<div class="login">
+    <input type="text" name="name" class="name">
+    <input type="submit" value="ログイン" class="login">
+</div>
 </form>
 </body>
 
